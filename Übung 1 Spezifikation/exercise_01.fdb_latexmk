@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1744634418.22992 "/home/marco/Documents/studium/software engineering/SE-LaTex/Übung 1 Spezifikation/exercise_01.tex" "exercise_01.pdf" "exercise_01" 1744634419.43074 0
+["pdflatex"] 1744634463.16331 "/home/marco/Documents/studium/software engineering/SE-LaTex/Übung 1 Spezifikation/exercise_01.tex" "exercise_01.pdf" "exercise_01" 1744634464.62049 0
   "../common/hs_aalen_de.png" 1744627010 88524 a6211c284181c8a098523a07a3b1b733 ""
-  "/home/marco/Documents/studium/software engineering/SE-LaTex/Übung 1 Spezifikation/exercise_01.tex" 1744634417.91743 11708 fe6977991af022e69e4bcc8dd02361b4 ""
+  "/home/marco/Documents/studium/software engineering/SE-LaTex/Übung 1 Spezifikation/exercise_01.tex" 1744634462.5259 11703 ef3a0b4110c6e04c8e4991b2a2b378d2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -56,8 +56,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1743629845 5501089 f2ffe622267f7d8bfaba0244ab87ba6f ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1743630036 3345755 fee6b38b57cd6328481c93fc9be152c1 ""
   "/usr/local/texlive/2025/texmf.cnf" 1743629836.66205 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "exercise_01.aux" 1744634419.34061 1181 4ed2fa218725e325b3b01be00d0656f6 "pdflatex"
-  "exercise_01.tex" 1744634417.91743 11708 fe6977991af022e69e4bcc8dd02361b4 ""
+  "exercise_01.aux" 1744634464.53714 1181 4ed2fa218725e325b3b01be00d0656f6 "pdflatex"
+  "exercise_01.tex" 1744634462.5259 11703 ef3a0b4110c6e04c8e4991b2a2b378d2 ""
   (generated)
   "exercise_01.aux"
   "exercise_01.log"
