@@ -1,0 +1,23 @@
+# LaTeX intermediate and output files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.lof
+*.lot
+*.lol
+
+# Temporary files
+*~
+*.backup
+*.bak
+*.tmp
+
