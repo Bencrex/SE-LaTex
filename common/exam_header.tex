@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel} % automatische Silbentrennung
+\usepackage[table]{xcolor}
+\usepackage{tabularx,array,booktabs,makecell}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{linegoal}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\fancyhead[L]{\\}  
+\fancyhead[C]{Software Engineering WS 2024/2025 \aufgabenblatt}
+\fancyhead[R]{\\\includegraphics[width=0.25\textwidth]{../common/hs_aalen_de.png}}
+
+\fancypagestyle{page1}{
+	\fancyhead[L]{}
+	\fancyhead[C]{Software Engineering WS 2024/2025 \\ \aufgabenblatt}
+	\fancyhead[R]{ \\\includegraphics[width=0.25\textwidth]{../common/hs_aalen_de.png}}
+
+}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2.5mm}
+
+\titlespacing*{\section}{0mm}{4pt}{0pt}
+\setlength{\headsep}{14mm}
+
+
+\newcommand{\answerspace}{ \underline{\hspace{5cm}}}
+\newcommand{\answerline}{\vspace{1cm}\\ \rule{\linegoal}{1pt}}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}

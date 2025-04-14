@@ -1,0 +1,238 @@
+\def\duedate{09.04.2025}
+\def\teamname{The Hardcoders}
+\def\aufgabenblatt{1}
+
+\documentclass{article}
+
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel} % automatische Silbentrennung
+\usepackage[table]{xcolor}
+\usepackage{tabularx,array,booktabs,makecell}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\fancyhead[L]{\teamname}  
+\fancyhead[C]{Software Engineering\\Aufgabenblatt \aufgabenblatt}
+\fancyhead[R]{\\\includegraphics[width=0.25\textwidth]{../common/hs_aalen_de.png}}
+
+\fancypagestyle{page1}{
+	\fancyhead[L]{\teamname \\Abgabe: \duedate}
+	\fancyhead[C]{Software Engineering\\Aufgabenblatt \aufgabenblatt}
+	\fancyhead[R]{ \\\includegraphics[width=0.25\textwidth]{../common/hs_aalen_de.png}}
+
+}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2.5mm}
+
+\titlespacing*{\section}{0mm}{4pt}{0pt}
+\setlength{\headsep}{14mm}
+
+\begin{document}
+
+\thispagestyle{page1} 
+In dieser Übung betrachten wir die Anforderungen der Software \textit{Sidequest}. Das Ziel von \textit{Sidequest} ist es Menschen zu helfen ihre Aufgaben zu organisieren.
+
+
+\section{Team Setup}
+
+Please group yourself in teams of 3-4 persons. Agree on a team name. 
+
+\textbf{Team Name:} \teamname
+
+\textbf{Team Mitglieder:}
+\begin{enumerate}
+\item Marco Bencic (3005314)
+\item Benjamin Klett (3003345)
+\item Fabian Strauß (3003662)
+\end{enumerate}
+
+\section{Probleme}
+
+\section{Fragen}
+
+\begin{itemize}
+	\item Wie soll das System mit bestehender oder fehlender Onlineverbindung umgehen (Benji Klett)?
+    \item Soll jeder \textit{Plugins} zur Verfügung stellen können oder sollen die verfügbaren \textit{Plugins} reguliert werden? (Marco Bencic)
+    \item Soll die Anzahl der \textit{Benutzer}, die die \textit{Subquests} eines \textit{Quests} erledigen auf ein Maximum beschränkt werden ?
+\end{itemize}
+
+\section{Vision}
+
+\textit{Sidequest} unterstützt Individuen und Gruppen wie z.B. Familien ihre Alltags- und Verwaltungsaufgaben im Griff zu behalten. Durch Künstliche Intelligenz lernt das System , welche Schritte zur Erreichung eines Ziels erforderlich sind und verfeinert Aufgaben (genannt Quests) automatisch zu Schritten (genannt Subquests). \textit{Sidequest} kann erweitert werden, um nach und nach immer mehr Verwaltungsaufgaben automatisch zu übernehmen. 
+
+\section{Ziele}
+
+\textit{Sidequest} ist ein Mehrbenutzer System, dass es erlaubt, Aufgaben anzulegen, zu Unteraufgaben zu verfeinern und den Status der Aufgaben zu verfolgen. Es unterstützt, Teilaufgaben einer Aufgabe an andere Personen zu delegieren. 
+
+\textit{Sidequest} unterstützt die Benutzer unterwegs und auf der Arbeit.
+
+\textit{Sidequest} erkennt, wenn Nutzer wiederkehrend semantisch ähnliche Aufgaben anlegen, und nutzt dies, um automatisch Subquests vorzuschlagen. Diese Erkennung funktioniert sowohl Nutzerbezogen, d.h. das System erkennt, dass ein Nutzer Aufgaben immer auf die gleiche Art erledigt, als auch über Nutzer hinweg, d.h. das System kann eine Aufgabe zerlegen, weil andere Nutzer sie bereits sinnvoll zerlegt haben.
+
+\textit{Sidequest} verfügt über ein Plugin-System, welches Entwicklern die Möglichkeit gibt, den Funktionsumfang zu erweitern. (Marco Bencic)
+
+\section{Functional Requirements}
+
+\begin{tabularx}{0.8\textwidth} { 
+  | >{\raggedright\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+ Systemqualität & sehr gut & gut & normal & nicht relevant \\
+ \hline
+ Funktionalität  &   & x &  &   \\
+ \hline
+ Zuverlässigkeit  &   &  & x &   \\
+\hline
+ Benutzbarkeit  & x  &  &  &   \\
+ \hline
+ Effizienz  &   &  & x &   \\
+ \hline
+ Wartbarkeit  &   & x &  &   \\
+ \hline
+ Portabilität  & x  &  &  &   \\
+ \hline
+\end{tabularx}
+
+\subsection{Dictionary}
+
+\begin{samepage}
+\textbf{Begriff:} Benutzer \\
+\textbf{Bedeutung:} Account eines Systembenutzers, der von mehreren Endgeräten aus benutzt werden kann. \\
+\textbf{Gültigkeit:} Ein \textit{Benutzer} existieren von der Registrierung (R X) eines Benutzers bis zu seiner Löschung (R Y). \\
+\textbf{Identifikation:} EMail-Adresse, nur Sanity-Check (Eingabestring entspricht EMail-Format). Keine Überprüfung der Existenz eines passenden EMail-Kontos. \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Benutzereinstellungen \\
+\textbf{Bedeutung:} Konfigurierbar ist: Zeitraum der automatischen Löschung, ... \\
+\textbf{Gültigkeit:} Die Benutzereinstellungen existieren von der Anlage eines Benutzers bis zu seiner Löschung. \\
+\textbf{Identifikation:} Ist 1:1 mit dem Benutzer verknüpft. \\
+\textbf{Querverweise:} \textit{Benutzer} \\ \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Quest \\
+\textbf{Bedeutung:} Eine \textit{Quest} repräsentiert eine Aufgabe, die ein \textit{Benutzer} lösen möchte. Es gibt für jede \textit{Quest} einen Besitzer (Standart: Ersteller) und einen Bearbeiter (Standart: Besitzer). \\
+\textbf{Abgrenzung:} Quest Template \\
+\textbf{Gültigkeit:} Eine \textit{Quest} existiert von ihrer Anlage bis zu ihrer Löschung. \\
+\textbf{Identifikation:} Eine \textit{Quest} wird über eine interne ID identifiziert. \\
+\textbf{Querverweise:} \textit{Haupquest}, \textit{Sidequest} \\ \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Hauptquest \\
+\textbf{Bedeutung:} Eine \textit{Hauptquest} ist eine \textit{Quest} ohne übergeordnete \textit{Quest}. \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Hierarchisches Quest \\
+\textbf{Bedeutung:} Eine \textit{hyrarchisches Quest} ist ein \textit{Quest}, das \textit{Subquests} besitzt, die in einer bestimmten Reihenfolge abgearbeitet werden müssen.  \\
+\textbf{Abgrenzung:} Quest \\
+\textbf{Identifikation:} Eine \textit{hyrarchisches Quest} wird über eine interne ID identifiziert. \\
+\textbf{Querverweise:} \textit{Haupquest}, \textit{Sidequest} \\ \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Plugin \\
+\textbf{Bedeutung:} Ein \textit{Plugin} ist eine nachträglich installierte Software, welche den Funktionsumfang von \textit{Sidequest} erweitert. \\
+\textbf{Abgrenzung:} Standard Optionen \\
+\textbf{Gültigkeit:} Damit ein \textit{Plugin} funktioniert, muss dieses installiert und aktiviert werden  \\
+\textbf{Identifikation:} Eine \textit{Plugin} wird über seinen Herausgeber identifiziert \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Subquest \\
+\textbf{Bedeutung:} Eine \textit{Subquest} ist eine \textit{Quest}, die einer anderen \textit{Quest} untergeordnet ist. Um eine \textit{Quest} zu erfüllen, müssen zunächst alle \textit{Subquests} erfüllt werden. \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Quest Template \\
+\textbf{Bedeutung:} Ein \textit{Quest Template} repräsentiert ein wiederkehrendes Ziel, dass \textit{Benutzer} lösen möchten. Durch \textit{Quest Templates} können \textit{Quests} automatisch mit \textit{Subquests} befüllt werden. \\
+\textbf{Abgrenzung:} Quest \\
+\textbf{Gültigkeit:} Ein \textit{Quest Template} existiert als Programmbestandteil ständig. \\
+\textbf{Identifikation:} Eine \textit{Quest Template} wird über eine interne ID identifiziert. \\
+\textbf{Querverweise:} Quest, Hauptquest, Sidequest \\ \\
+\end{samepage}
+
+\subsection{Requirements}
+
+\begin{itemize}
+\item R0 Ändern von Zuständigkeiten für \textit{Quests}
+    \begin{itemize}
+        \item Jede \textit{Quest} bzw. \textit{Subquest} hat sowohl Besitzer als auch Bearbeiter, beide können unabhängig von einander an andere Nutzer 
+    \end{itemize}
+
+\item R1 Löschen von \textit{Quests} (Datenschutzbeauftragter) 
+	\begin{itemize}
+	\item R 1.1 \textit{Benutzer} können \textit{Quests} manuell löschen, und zwar einzeln (unabhängig vom Status) oder in ganzen Zeiträumen (nur abgeschlossene Quests). (Tom Gallo, Josa Kirscher) 
+	\item R 1.2 Abgeschlossene \textit{Quests} werden automatisch nach einem bestimmten Zeitraum gelöscht, wenn dies in den \textit{Benutzereinstellungen} so konfiguriert ist. (Tom Gallo, Josa Kirscher)
+	\end{itemize}
+
+\item \textit{Benutzer} können einen vollständigen Verlauf ihrer Quests anschauen (Tim Dahmen) 
+
+\item \textit{Benutzer} können Quests manuell anlegen. (Tim Dahmen) 
+\item Die manuelle Anlage von Quests und Subquests soll so einfach und schnell wie möglich erfolgen. (Tim Dahmen) 
+\item Quests können verschiedene Status haben. (Tim Dahmen) 
+
+\item R2 Benutzerverwaltung (Datenschutzbeauftragter) (Marco Bencic)
+    \begin{itemize}
+        \item R 2.1 \textit{Benutzer} müssen mit Email Adresse und Namen angelegt werden können.
+        \item R 2.2 \textit{Benutzer} müssen gelöscht werden können
+        \item R 2.3 Gelöschten \textit{Benutzern} zugewiesene \textit{Quests} müssen an einen anderen noch existierenen \textit{Benutzer} übertragen werden können. Dieser muss solche \textit{Quests} annehmen können, andernfalls werden sie gelöscht. 
+    \end{itemize}
+\item R3 Installation/Deinstallation von Plugins (IT-Abteilung) (Marco Bencic)
+    \begin{itemize}
+        \item R 3.1 \textit{Plugins} müssen direkt in \textit{Sidequest} installiert und deinstalliert werden können 
+        \item R 3.2 Es muss eine Option geben, in der man aktiv zustimmen muss, dass man \textit{Plugins} verwenden will
+        \item R 3.3 Bei Neuinstallation und beim Erscheinen neuer Plugins soll eine Popup-Nachricht beim Öffnen der App den \textit{Benutzer} darauf hinweisen, dass diese existieren und zur Installation bereit stehen. (Fabian Strauß)
+    \end{itemize}
+
+\item R4 Subquests
+    \begin{itemize}
+        \item R 4.1 \textit{Benutzer} können Quests manuell in Subquests zerlegen. (Tim Dahmen) 
+        \item R 4.2 \textit{Subquests} können wiederum in weitere \textit{Subquests} zerlegt werden (nested \textit{Subquests}) (Marco Bencic)
+    \end{itemize}
+\item R5 Questvergabe (Marco Bencic)
+    \begin{itemize}
+        \item R 5.1 \textit{Quests} müssen verschiedenen \textit{Benutzern} zugewiesen werden können
+        \item R 5.2 \textit{Subquests} können auf mehrere Benutzer aufgeteilt werden sofern diese nicht Teil eines \textit{hierarchischen Quests} sind
+    \end{itemize}
+\item R6 Benutzereinstellungen (Datenschutzbeauftragte) (Benji Klett)
+    \begin{itemize}
+        \item R 6.1 Der Name und die E-Mailadresse eines \textit{Benutzer}s müssen sich ändern lassen
+        \item R 6.2 Ein \textit{Benutzer} kann die Einwilligung der Datenverarbeitung durch KI zurückziehen
+    \end{itemize}
+\item R7 Belohnungssystem (Fabian Strauß)
+    \begin{itemize}
+        \item R 7.1 \textit{Quests} bzw. \textit{Subquests} müssen Belohnungspunkte zugewiesen werden können, auf dessen Basis die App solche Punkte für andere \textit{Benutzer} bei Erledigung vergibt. Die KI-Unterstützung soll eine Klassifizierung der (Unter-)Aufgaben vornehmen, um die automatische Punktevergabe zu optimieren.
+        \item R 7.2 \textit{Benutzer} sollen zusätzlich progressiv steigende Boni auf erledigte Aufgaben bekommen können, wenn diese zb. täglich erledigt werden mit Beginn von vorne, falls ein Benutzer die Kette unterbricht.
+        \item R 7.3 Ein für jeden \textit{Benutzer} sichtbares Ranking soll existieren, dass die \textit{Benutzer} mit den höchsten Punktzahlen dort auflistet.
+    \end{itemize}
+
+\end{itemize}
+
+\subsection{Use-Cases}
+
+\begin{samepage}
+\textbf{Numbers:}\\
+\textbf{Name:}\\
+\textbf{Actors:}\\
+\textbf{Trigger:}\\
+\textbf{Preconditions:}\\
+\textbf{Postconditions / Goal:}\\
+\textbf{Postconditions Special Cases:}\\
+\textbf{Steps Default Case:}\\
+\textbf{Special Cases:}\\
+\end{samepage}
+
+Write the requirement specification of Sidequest.
+
+\section{Non-Functional Requirements}
+
+\end{document}
