@@ -298,6 +298,32 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \\
 \end{samepage}
 
+\vspace{0.5cm}
+
+\begin{samepage}
+\textbf{Numbers:} SQ-3.2\\
+\textbf{Name:} Benutzer registrieren\\
+\textbf{Actors:} Anwender\\
+\textbf{Trigger:} Anwender installiert die App, öffnet diese und fordert eine Registrierung an.\\
+\textbf{Preconditions:} Das gewünschte Benutzerkonto existiert nicht im System. \\
+\textbf{Postconditions / Goal:} Ein Benutzerkonto existiert für den Anwender im System.\\
+\textbf{Postconditions Special Cases:} Es wurde ein neues Konto erstellt\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+    \item Anwender fordert eine Registrierung im System an
+    \item System zeigt Eingabemaske für die erforderlichen Profilangaben
+    \item Anwender gibt Benutzernamen, E-mail-Adresse und optional einen Vor- bzw. einen Nachnamen ein und bestätigt die Eingabe.
+    \item Ein Hinweis über die erfolgreiche Erstellung des Kontos wird angezeigt und das Hauptmenü wird angezeigt, welches sich im in das Konto eingeloggten Zustand befindet.
+\end{enumerate}\\
+\textbf{Special Cases:}
+\begin{itemize}
+    \item 4.a Benutzername oder E-Mail existieren bereits, E-Mail besteht den Sanity-Check nicht.\\
+          3.a1 Anwender bekommt entsprechende Fehlermeldung.\\
+          3.a2 Bestätigung bleibt aus, Anwender verbleibt in der Registrierungsansicht.
+    Subquest ab.
+\end{itemize}\\
+\\
+\end{samepage}
 
 
 Write the requirement specification of Sidequest.
