@@ -165,7 +165,7 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \begin{itemize}
 \item R0 Ändern von Zuständigkeiten für \textit{Quests}
     \begin{itemize}
-        \item Jede \textit{Quest} bzw. \textit{Subquest} hat sowohl Besitzer als auch Bearbeiter, beide können unabhängig von einander an andere Nutzer 
+        \item Jede \textit{Quest} bzw. \textit{Subquest} hat sowohl Besitzer als auch Bearbeiter, beide können unabhängig von einander an andere Nutzer vergeben werden.
     \end{itemize}
 
 \item R1 Löschen von \textit{Quests} (Datenschutzbeauftragter) 
@@ -195,13 +195,7 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 
 \item R4 Subquests
     \begin{itemize}
-        \item R 4.1 \textit{Benutzer} können Quests manuell in Subquests zerlegen. (Tim Dahmen) 
-        \item R 4.2 \textit{Subquests} können wiederum in weitere \textit{Subquests} zerlegt werden (nested \textit{Subquests}) (Marco Bencic)
-    \end{itemize}
-\item R5 Questvergabe (Marco Bencic)
-    \begin{itemize}
-        \item R 5.1 \textit{Quests} müssen verschiedenen \textit{Benutzern} zugewiesen werden können
-        \item R 5.2 \textit{Subquests} können auf mehrere Benutzer aufgeteilt werden sofern diese nicht Teil eines \textit{hierarchischen Quests} sind
+        \item R 4.1 \textit{Benutzer} können Quests manuell in Subquests zerlegen. (Tim Dahmen) \item R 4.2 \textit{Subquests} können wiederum in weitere \textit{Subquests} zerlegt werden (nested \textit{Subquests}) (Marco Bencic) \end{itemize} \item R5 Questvergabe (Marco Bencic) \begin{itemize} \item R 5.1 \textit{Quests} müssen verschiedenen \textit{Benutzern} zugewiesen werden können \item R 5.2 \textit{Subquests} können auf mehrere Benutzer aufgeteilt werden sofern diese nicht Teil eines \textit{hierarchischen Quests} sind
     \end{itemize}
 \item R6 Benutzereinstellungen (Datenschutzbeauftragte) (Benji Klett)
     \begin{itemize}
@@ -220,18 +214,32 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \subsection{Use-Cases}
 
 \begin{samepage}
-\textbf{Numbers:}\\
-\textbf{Name:}\\
-\textbf{Actors:}\\
-\textbf{Trigger:}\\
-\textbf{Preconditions:}\\
-\textbf{Postconditions / Goal:}\\
-\textbf{Postconditions Special Cases:}\\
-\textbf{Steps Default Case:}\\
-\textbf{Special Cases:}\\
+\textbf{Numbers:} AA-1\\
+\textbf{Name:} Quest erstellen\\
+\textbf{Actors:} Benutzer\\
+\textbf{Trigger:} Benutzer möchte ein neues Quest hinzufügen\\
+\textbf{Preconditions:}  App befindet sich im Hauptmenü\\
+\textbf{Postconditions / Goal:} Quest wird erstellt und angezeigt\\
+\textbf{Postconditions Special Cases:}
+\begin{itemize}
+    \item Erstellung verweigert, wegen unzulässigem Namen des Quests
+    \item 
+\end{itemize}
+\textbf{Steps Default Case:} 
+\begin{enumerate}
+    \item Benutzer klickt auf Quest hinzufügen
+    \item Benutzer gibt Daten bezüglich des erstellten Quests ein 
+    \item Benutzer speichert das Quest
+\end{enumerate}
+\textbf{Special Cases:}
+\begin{itemize}
+    \item [2a] ungültiger Questname
+    \begin{itemize}
+        \item [2a1] Anzeigen von Fehlermeldung, dass Questname nicht erlaubt ist
+    \end{itemize}
+\end{itemize}
 \end{samepage}
 
-Write the requirement specification of Sidequest.
 
 \section{Non-Functional Requirements}
 
