@@ -131,10 +131,39 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \end{samepage}
 
 \begin{samepage}
+\textbf{Begriff:} Besitzer \\
+\textbf{Bedeutung:} Der \textit{Besitzer} einer Quest ist ein \textit{Benutzer}, der für eine \textit{Quest} verantwortlich ist und Rechte an dieser in vollem Umfang hat. Es gibt für jede \textit{(Sub-)Quest} nur einen Besitzer. Dieser kann den \textit{Bearbeiter} abändern bzw. neu zuteilen durch Anfragen. \\
+\textbf{Abgrenzung:} Bearbeiter \\
+\textbf{Gültigkeit:} Ein \textit{Besitzer} existiert für jede \textit{(Sub-)Quest} von Anfang bis zur Löschung dieser. \\
+\textbf{Identifikation:} Der \textit{Besitzer} ist einer Quest fest zugeordnet. \\
+\textbf{Querverweise:} \textit{Bearbeiter} \\ \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Bearbeiter \\
+\textbf{Bedeutung:} Der \textit{Bearbeiter} einer Quest ist ein \textit{Benutzer}, der berechtigt ist, eine \textit{(Sub-)Quest} zu bearbeiten. Es kann mehrere Bearbeiter für eine \textit{(Sub-)Quest} geben. Diese haben keine Übertragungsrechte, eine Anfrage zum Erlangen des Bearbeiterstatus kann nur vom \textit{Besitzer} angenommen oder abgelehnt werden.
+ \\
+\textbf{Abgrenzung:} Besitzer \\
+\textbf{Gültigkeit:} Ein \textit{Bearbeiter} existiert für jede \textit{(Sub-)Quest} von Anfang bis zur Löschung dieser . \\
+\textbf{Identifikation:} Der \textit{Bearbeiter} ist einer Quest fest zugeordnet. \\
+\textbf{Querverweise:} \textit{Besitzer} \\ \\
+\end{samepage}
+
+\begin{samepage}
+\textbf{Begriff:} Gruppe \\
+\textbf{Bedeutung:} Eine \textit{Gruppe} ist ein spezieller \textit{Benutzer}, der stellvertretend für eine Menge konkreter \textit{Benutzer} sowohl \textit{Besitzer} als auch \textit{Bearbeiter} sein kann. Anstelle dieses Gruppenbenutzers kann jedes Gruppenmitglied gleichermaßen \textit{Besitzer}- u. \textit{Bearbeiter} verändern und \textit{(Sub-)Quests}, die speziell für diese \textit{Gruppe} erstellt wurden, an Nichtmitglieder delegieren.
+ \\
+\textbf{Abgrenzung:} Benutzer \\
+\textbf{Gültigkeit:} Eine \textit{Gruppe} existiert von der Erstellung bis zur Löschung dieser. \\
+\textbf{Identifikation:} Die \textit{Gruppe} ist ein spezieller \textit{Benutzer} und wird daher auch durch eine interne ID identifiziert. \\
+\textbf{Querverweise:} \textit{Benutzer} \\ \\
+\end{samepage}
+
+\begin{samepage}
 \textbf{Begriff:} Hierarchisches Quest \\
-\textbf{Bedeutung:} Eine \textit{hyrarchisches Quest} ist ein \textit{Quest}, das \textit{Subquests} besitzt, die in einer bestimmten Reihenfolge abgearbeitet werden müssen.  \\
+\textbf{Bedeutung:} Eine \textit{hierarchisches Quest} ist ein \textit{Quest}, das \textit{Subquests} besitzt, die in einer bestimmten Reihenfolge abgearbeitet werden müssen.  \\
 \textbf{Abgrenzung:} Quest \\
-\textbf{Identifikation:} Eine \textit{hyrarchisches Quest} wird über eine interne ID identifiziert. \\
+\textbf{Identifikation:} Eine \textit{hierarchisches Quest} wird über eine interne ID identifiziert. \\
 \textbf{Querverweise:} \textit{Haupquest}, \textit{Sidequest} \\ \\
 \end{samepage}
 
@@ -163,15 +192,17 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \subsection{Requirements}
 
 \begin{itemize}
-\item R0 Ändern von Zuständigkeiten für \textit{Quests}
+\item R1 Ändern von Zuständigkeiten für \textit{Quests} (Fabian Strauß)
     \begin{itemize}
-        \item Jede \textit{Quest} bzw. \textit{Subquest} hat sowohl Besitzer als auch Bearbeiter, beide können unabhängig von einander an andere Nutzer vergeben werden.
-    \end{itemize}
+        \item R1.1 Jede \textit{Quest} bzw. \textit{Subquest} hat sowohl Besitzer als auch Bearbeiter, beide können unabhängig von einander an andere Nutzer übertragen werden.
+	\item R1.2 Die Übertragung eine \textit{(Sub-)Quest} kann sowohl beim aktuellen 	Besitzer als auch beim Bearbeiter angefragt werden, diese können die Anfrage annehmen oder ablehnen (User werden bekannt durch peröhnliches Austauschen der Profildaten oder durch Mitgliedschaft in einer gemeinsamen Gruppe).
+ 	\item R1.3 Der aktuelle Besitzer/Bearbeiter kann auch einen anderen User um Übernahme einer \textit{(Sub-)Quest} bitten, welche diese annehmen können.
+    \end{itemize}    
 
-\item R1 Löschen von \textit{Quests} (Datenschutzbeauftragter) 
+\item R2 Löschen von \textit{Quests} (Datenschutzbeauftragter) 
 	\begin{itemize}
-	\item R 1.1 \textit{Benutzer} können \textit{Quests} manuell löschen, und zwar einzeln (unabhängig vom Status) oder in ganzen Zeiträumen (nur abgeschlossene Quests). (Tom Gallo, Josa Kirscher) 
-	\item R 1.2 Abgeschlossene \textit{Quests} werden automatisch nach einem bestimmten Zeitraum gelöscht, wenn dies in den \textit{Benutzereinstellungen} so konfiguriert ist. (Tom Gallo, Josa Kirscher)
+	\item R 2.1 \textit{Benutzer} können \textit{Quests} manuell löschen, und zwar einzeln (unabhängig vom Status) oder in ganzen Zeiträumen (nur abgeschlossene Quests). (Tom Gallo, Josa Kirscher) 
+	\item R 2.2 Abgeschlossene \textit{Quests} werden automatisch nach einem bestimmten Zeitraum gelöscht, wenn dies in den \textit{Benutzereinstellungen} so konfiguriert ist. (Tom Gallo, Josa Kirscher)
 	\end{itemize}
 
 \item \textit{Benutzer} können einen vollständigen Verlauf ihrer Quests anschauen (Tim Dahmen) 
@@ -180,33 +211,48 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \item Die manuelle Anlage von Quests und Subquests soll so einfach und schnell wie möglich erfolgen. (Tim Dahmen) 
 \item Quests können verschiedene Status haben. (Tim Dahmen) 
 
-\item R2 Benutzerverwaltung (Datenschutzbeauftragter) (Marco Bencic)
+\item R3 Benutzerverwaltung (Datenschutzbeauftragter) (Marco Bencic)
     \begin{itemize}
-        \item R 2.1 \textit{Benutzer} müssen mit Email Adresse und Namen angelegt werden können.
-        \item R 2.2 \textit{Benutzer} müssen gelöscht werden können
-        \item R 2.3 Gelöschten \textit{Benutzern} zugewiesene \textit{Quests} müssen an einen anderen noch existierenen \textit{Benutzer} übertragen werden können. Dieser muss solche \textit{Quests} annehmen können, andernfalls werden sie gelöscht. 
+        \item R 3.1 \textit{Benutzer} müssen mit Email Adresse und Namen angelegt werden können.
+        \item R 3.2 \textit{Benutzer} müssen gelöscht werden können
+        \item R 3.3 Gelöschten \textit{Benutzern} zugewiesene \textit{Quests} müssen an einen anderen noch existierenen \textit{Benutzer} übertragen werden können. Dieser muss solche \textit{Quests} annehmen können, andernfalls werden sie gelöscht. 
     \end{itemize}
-\item R3 Installation/Deinstallation von Plugins (IT-Abteilung) (Marco Bencic)
+\item R4 Installation/Deinstallation von Plugins (IT-Abteilung) (Marco Bencic)
     \begin{itemize}
-        \item R 3.1 \textit{Plugins} müssen direkt in \textit{Sidequest} installiert und deinstalliert werden können 
-        \item R 3.2 Es muss eine Option geben, in der man aktiv zustimmen muss, dass man \textit{Plugins} verwenden will
-        \item R 3.3 Bei Neuinstallation und beim Erscheinen neuer Plugins soll eine Popup-Nachricht beim Öffnen der App den \textit{Benutzer} darauf hinweisen, dass diese existieren und zur Installation bereit stehen. (Fabian Strauß)
+        \item R 4.1 \textit{Plugins} müssen direkt in \textit{Sidequest} installiert und deinstalliert werden können 
+        \item R 4.2 Es muss eine Option geben, in der man aktiv zustimmen muss, dass man \textit{Plugins} verwenden will
+        \item R 4.3 Bei Neuinstallation und beim Erscheinen neuer Plugins soll eine Popup-Nachricht beim Öffnen der App den \textit{Benutzer} darauf hinweisen, dass diese existieren und zur Installation bereit stehen. (Fabian Strauß)
     \end{itemize}
 
-\item R4 Subquests
+\item R5 Subquests
     \begin{itemize}
-        \item R 4.1 \textit{Benutzer} können Quests manuell in Subquests zerlegen. (Tim Dahmen) \item R 4.2 \textit{Subquests} können wiederum in weitere \textit{Subquests} zerlegt werden (nested \textit{Subquests}) (Marco Bencic) \end{itemize} \item R5 Questvergabe (Marco Bencic) \begin{itemize} \item R 5.1 \textit{Quests} müssen verschiedenen \textit{Benutzern} zugewiesen werden können \item R 5.2 \textit{Subquests} können auf mehrere Benutzer aufgeteilt werden sofern diese nicht Teil eines \textit{hierarchischen Quests} sind
+        \item R 5.1 \textit{Benutzer} können Quests manuell in Subquests zerlegen. (Tim Dahmen) 
+        \item R 5.2 \textit{Subquests} können wiederum in weitere \textit{Subquests} zerlegt werden (nested \textit{Subquests}) (Marco Bencic)
     \end{itemize}
-\item R6 Benutzereinstellungen (Datenschutzbeauftragte) (Benji Klett)
+\item R6 Questvergabe (Marco Bencic)
     \begin{itemize}
-        \item R 6.1 Der Name und die E-Mailadresse eines \textit{Benutzer}s müssen sich ändern lassen
-        \item R 6.2 Ein \textit{Benutzer} kann die Einwilligung der Datenverarbeitung durch KI zurückziehen
+        \item R 6.1 \textit{Quests} müssen verschiedenen \textit{Benutzern} zugewiesen werden können
+        \item R 6.2 \textit{Subquests} können auf mehrere Benutzer aufgeteilt werden sofern diese nicht Teil eines \textit{hierarchischen Quests} sind
     \end{itemize}
-\item R7 Belohnungssystem (Fabian Strauß)
+\item R7 Benutzereinstellungen (Datenschutzbeauftragte) (Benji Klett)
     \begin{itemize}
-        \item R 7.1 \textit{Quests} bzw. \textit{Subquests} müssen Belohnungspunkte zugewiesen werden können, auf dessen Basis die App solche Punkte für andere \textit{Benutzer} bei Erledigung vergibt. Die KI-Unterstützung soll eine Klassifizierung der (Unter-)Aufgaben vornehmen, um die automatische Punktevergabe zu optimieren.
-        \item R 7.2 \textit{Benutzer} sollen zusätzlich progressiv steigende Boni auf erledigte Aufgaben bekommen können, wenn diese zb. täglich erledigt werden mit Beginn von vorne, falls ein Benutzer die Kette unterbricht.
-        \item R 7.3 Ein für jeden \textit{Benutzer} sichtbares Ranking soll existieren, dass die \textit{Benutzer} mit den höchsten Punktzahlen dort auflistet.
+        \item R 7.1 Der Name und die E-Mailadresse eines \textit{Benutzer}s müssen sich ändern lassen
+        \item R 7.2 Ein \textit{Benutzer} kann die Einwilligung der Datenverarbeitung durch KI zurückziehen
+    \end{itemize}
+
+\begin{itemize}
+\item R8 Anlage von \textit{Gruppen} zur gemeinsamen Bearbeitung von \textit{Quests} (Fabian Strauß)
+    \begin{itemize}
+        \item R1.1 Jeder \textit{Benutzer} soll \textit{Gruppen} anlegen können. \textit{(Sub-)Quests} können dann speziell für diese \textit{Gruppe} zur Bearbeitung erstellt werden.
+	\item R1.2 Im Gegensatz zu normalen \textit{(Sub-)Quests} sollen alle Gruppenmitglieder Besitzerrechte ausüben und delegieren können, \textit{Besitzer} bleibt jedoch bei Gruppenquests immer die \textit{Gruppe}. Die Bearbeitung kann auch an Nichtmitglieder delegiert werden.
+    \end{itemize}
+
+    
+\item R9 Belohnungssystem (Fabian Strauß)
+    \begin{itemize}
+        \item R 9.1 \textit{Quests} bzw. \textit{Subquests} müssen Belohnungspunkte zugewiesen werden können, auf dessen Basis die App solche Punkte für andere \textit{Benutzer} bei Erledigung vergibt. Die KI-Unterstützung soll eine Klassifizierung der (Unter-)Aufgaben vornehmen, um die automatische Punktevergabe zu optimieren.
+        \item R 9.2 \textit{Benutzer} sollen zusätzlich progressiv steigende Boni auf erledigte Aufgaben bekommen können, wenn diese zb. täglich erledigt werden mit Beginn von vorne, falls ein Benutzer die Kette unterbricht.
+        \item R 9.3 Ein für jeden \textit{Benutzer} sichtbares Ranking soll existieren, dass die \textit{Benutzer} mit den höchsten Punktzahlen dort auflistet.
     \end{itemize}
 
 \end{itemize}
@@ -214,32 +260,73 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \subsection{Use-Cases}
 
 \begin{samepage}
-\textbf{Numbers:} AA-1\\
-\textbf{Name:} Quest erstellen\\
-\textbf{Actors:} Benutzer\\
-\textbf{Trigger:} Benutzer möchte ein neues Quest hinzufügen\\
-\textbf{Preconditions:}  App befindet sich im Hauptmenü\\
-\textbf{Postconditions / Goal:} Quest wird erstellt und angezeigt\\
-\textbf{Postconditions Special Cases:}
-\begin{itemize}
-    \item Erstellung verweigert, wegen unzulässigem Namen des Quests
-    \item 
-\end{itemize}
-\textbf{Steps Default Case:} 
-\begin{enumerate}
-    \item Benutzer klickt auf Quest hinzufügen
-    \item Benutzer gibt Daten bezüglich des erstellten Quests ein 
-    \item Benutzer speichert das Quest
-\end{enumerate}
-\textbf{Special Cases:}
-\begin{itemize}
-    \item [2a] ungültiger Questname
-    \begin{itemize}
-        \item [2a1] Anzeigen von Fehlermeldung, dass Questname nicht erlaubt ist
-    \end{itemize}
-\end{itemize}
+\textbf{Numbers:}\\
+\textbf{Name:}\\
+\textbf{Actors:}\\
+\textbf{Trigger:}\\
+\textbf{Preconditions:}\\
+\textbf{Postconditions / Goal:}\\
+\textbf{Postconditions Special Cases:}\\
+\textbf{Steps Default Case:}\\
+\textbf{Special Cases:}\\
 \end{samepage}
 
+
+\begin{samepage}
+\textbf{Numbers:} SQ-3.1\\
+\textbf{Name:} Quest abschließen\\
+\textbf{Actors:} Besitzer der Quest, Bearbeiter der letzten Subquest\\
+\textbf{Trigger:} Die letzte unbeendete Subquest wird beendet\\
+\textbf{Preconditions:} Der Status von mindestens einer Subquest ist nicht abgeschlossen\\
+\textbf{Postconditions / Goal:} Der Status aller Subquests und damit der Status der Quest ist abgeschlossen, die Quest steht nicht mehr zur Bearbeitung bereit (Der Status kann nicht mehr geändert werden). \\
+\textbf{Postconditions Special Cases:} Besitzer akzeptiert die erfolgreiche Bearbeitung eines Bearbeiters einer Subquest nicht, Status der Quest und der Subquest stehen dann immer noch auf offen.\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+    \item Bearbeiter letzter offener Subquest setzt deren Status auf abgeschlossen
+    \item Besitzer bekommt eine Nachricht über die Statusänderung
+    \item Besitzer bestätigt die vollständige Bearbeitung der Subquest
+    \item Die Subquest und die gesamte Quest hat jetzt den Status abgeschlossen
+    \item Beteiligte Benutzer bekommen eine Nachricht, die auf die erfolgreiche Bearbeitung der Quest hinweist.
+\end{enumerate}\\
+\textbf{Special Cases:}
+\begin{itemize}
+    \item 3.a Besitzer lehnt die erfolgreiche Bearbeitung der letzten offenen\\
+          3.a1 Die Anfrage wird auf abgelehnt gesetzt.\\
+          3.a2 Der antragstellende Bearbeiter bekommt eine Mitteilung über die Ablehnung seiner Anfrage.
+    Subquest ab.
+\end{itemize}\\
+\\
+\end{samepage}
+
+\vspace{0.5cm}
+
+\begin{samepage}
+\textbf{Numbers:} SQ-3.2\\
+\textbf{Name:} Benutzer registrieren\\
+\textbf{Actors:} Anwender\\
+\textbf{Trigger:} Anwender installiert die App, öffnet diese und fordert eine Registrierung an.\\
+\textbf{Preconditions:} Das gewünschte Benutzerkonto existiert nicht im System. \\
+\textbf{Postconditions / Goal:} Ein Benutzerkonto existiert für den Anwender im System.\\
+\textbf{Postconditions Special Cases:} Es wurde ein neues Konto erstellt\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+    \item Anwender fordert eine Registrierung im System an
+    \item System zeigt Eingabemaske für die erforderlichen Profilangaben
+    \item Anwender gibt Benutzernamen, E-mail-Adresse und optional einen Vor- bzw. einen Nachnamen ein und bestätigt die Eingabe.
+    \item Ein Hinweis über die erfolgreiche Erstellung des Kontos wird angezeigt und das Hauptmenü wird angezeigt, welches sich im in das Konto eingeloggten Zustand befindet.
+\end{enumerate}\\
+\textbf{Special Cases:}
+\begin{itemize}
+    \item 4.a Benutzername oder E-Mail existieren bereits, E-Mail besteht den Sanity-Check nicht.\\
+          3.a1 Anwender bekommt entsprechende Fehlermeldung.\\
+          3.a2 Bestätigung bleibt aus, Anwender verbleibt in der Registrierungsansicht.
+    Subquest ab.
+\end{itemize}\\
+\\
+\end{samepage}
+
+
+Write the requirement specification of Sidequest.
 
 \section{Non-Functional Requirements}
 
