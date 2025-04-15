@@ -213,8 +213,8 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 
 \subsection{Use-Cases}
 
-\begin{samepage}
-\textbf{Numbers:} AA-1\\
+
+\textbf{Numbers:} SQ-1.1\\
 \textbf{Name:} Quest erstellen\\
 \textbf{Actors:} Benutzer\\
 \textbf{Trigger:} Benutzer möchte ein neues Quest hinzufügen\\
@@ -223,23 +223,70 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \textbf{Postconditions Special Cases:}
 \begin{itemize}
     \item Erstellung verweigert, wegen unzulässigem Namen des Quests
-    \item 
+    \item Erstellung verweigert, wegen fehlenden Informationen
 \end{itemize}
 \textbf{Steps Default Case:} 
 \begin{enumerate}
     \item Benutzer klickt auf Quest hinzufügen
     \item Benutzer gibt Daten bezüglich des erstellten Quests ein 
+    \item Eingegebene Daten werden überprüft 
     \item Benutzer speichert das Quest
 \end{enumerate}
 \textbf{Special Cases:}
 \begin{itemize}
-    \item [2a] ungültiger Questname
+    \item [3a] Ungültiger Questname (unerlaubte Zeichen oder Name bereits vorhanden)
     \begin{itemize}
-        \item [2a1] Anzeigen von Fehlermeldung, dass Questname nicht erlaubt ist
+        \item [3a1] Anzeigen von Fehlermeldung, dass Questname nicht zulässig ist
+    \end{itemize}
+    \item [4a] Fehlende Informationen
+    \begin{itemize}
+        \item [4a1] Markieren von Textboxen von fehlenden Informationen
     \end{itemize}
 \end{itemize}
-\end{samepage}
 
+    \textbf{Numbers:} SQ-1.2\\
+    \textbf{Name:} Quest löschen\\
+    \textbf{Actors:} Benutzer\\
+    \textbf{Trigger:} Benutzer möchte ein bestehendes Quest löschen\\
+    \textbf{Preconditions:}  App befindet sich im Hauptmenü\\
+    \textbf{Postconditions / Goal:} Quest wird gelöscht \\
+    \textbf{Postconditions Special Cases:} \\
+    \textbf{Steps Default Case:} 
+    \begin{enumerate}
+        \item Benutzer wählt Quest aus, das gelöscht werden soll
+        \item Benutzer klickt auf Quest löschen
+    \end{enumerate}
+
+    \textbf{Numbers:} SQ-1.3\\
+    \textbf{Name:} Benutzer löschen\\
+    \textbf{Actors:} Benutzer\\
+    \textbf{Trigger:} Benutzer möchte einen anderen Benutzer löschen\\
+    \textbf{Preconditions:}  App befindet sich in der Benutzerverwaltung\\
+    \textbf{Postconditions / Goal:} Löschung eines Benutzers\\
+    \textbf{Postconditions Special Cases:}
+    \begin{itemize}
+        \item Benutzer kann nicht gelöscht werden, da er noch aktiven Quests zugeteilt ist
+        \item Benutzer kann nicht gelösct werden, da er nicht die notwendigen Berechtigungen hat
+    \end{itemize}
+    \textbf{Steps Default Case:} 
+    \begin{enumerate}
+        \item Benutzer wählt den zu löschenden Benutzer aus
+        \item Benutzer betätigt löschen
+        \item Benutzer bestätigt den Löschvorgang
+    \end{enumerate}
+\textbf{Special Cases:}
+\begin{itemize}
+    \item [2a] Löschvorgange Fehlgeschlagen (aktive Quests)
+    \begin{itemize}
+        \item [2a1] Fehlermeldung, dass Benutzer aufgrund von aktiven Quests nicht gelöscht werden kann
+        \item [2a2] Anzeigen von Quests, welche für den Fehlschlag des Löschvorganges verantwortlich sind
+    \end{itemize}
+    \item [2b] Fehlende Berechtigungen
+    \begin{itemize}
+        \item [2b1] Fehlermeldung, dass Benutzer aufgrund von fehlenden Berechtigungen nicht gelöscht werden kann
+        \item [2b2] Bildschirm Benutzerverwaltung wird angezeigt
+    \end{itemize}
+\end{itemize}
 
 \section{Non-Functional Requirements}
 
