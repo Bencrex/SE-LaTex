@@ -250,13 +250,23 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
     \textbf{Trigger:} Benutzer möchte ein bestehendes Quest löschen\\
     \textbf{Preconditions:}  App befindet sich im Hauptmenü\\
     \textbf{Postconditions / Goal:} Quest wird gelöscht \\
-    \textbf{Postconditions Special Cases:} \\
+    \textbf{Postconditions Special Cases:} 
+    \begin{itemize}
+        \item Quest kann nicht gelöscht werden, da Benutzer nicht owner des Quests ist 
+    \end{itemize}
     \textbf{Steps Default Case:} 
     \begin{enumerate}
         \item Benutzer wählt Quest aus, das gelöscht werden soll
         \item Benutzer klickt auf Quest löschen
+        \item Hauptmenü wird angezeigt
     \end{enumerate}
-
+    \textbf{Special Cases:}
+    \begin{itemize}
+        \item [2a] Fehlende Berechtigungen 
+        \begin{itemize}
+            \item [2a1] Fehlermeldung, da Benutzer nicht owner des Quests ist
+        \end{itemize}
+    \end{itemize}
     \textbf{Numbers:} SQ-1.3\\
     \textbf{Name:} Benutzer löschen\\
     \textbf{Actors:} Benutzer\\
