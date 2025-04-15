@@ -314,6 +314,34 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \end{itemize}
 \end{samepage}
 
+\vspace{0.5cm}
+
+\begin{samepage}
+\textbf{Numbers:} SQ-3.3\\
+\textbf{Name:} Gruppe anlegen\\
+\textbf{Actors:} Benutzer\\
+\textbf{Trigger:} Benutzer möchte eine Gruppe anlegen und wählt die Option in der Hauptansicht aus.\\
+\textbf{Preconditions:}  System ist in ein Benutzerkonto eingeloggt, Benutzer befindet sich in der Hauptansicht.\\
+\textbf{Postconditions / Goal:} Eine neue Gruppe mit mindestens dem Ersteller als Mitglied ist angelegt.\\
+\textbf{Postconditions Special Cases:} Eine neue Gruppe mit mindestens dem Ersteller als Mitglied ist angelegt. \\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+    \item Benutzer wählt Neuerstellung einer Gruppe aus
+    \item Ansicht zur Gruppenerstellung öffnet sich.
+    \item Benutzer gibt einen Gruppennamen ein und gibt optional weitere Benutzernamen ein.
+    \item Allen eingetragenen Benutzern wird eine Einladung in Form einer Nachricht gesendet.
+    \item Die Gruppe wird angelegt und die Hauptansicht wird angezeigt nach dem kurzen Erscheinen einer Erfolgsmeldung im Menu zur Gruppenerstellung.
+\end{enumerate}\\
+\textbf{Special Cases:}
+\begin{itemize}
+    \item 3.a Eingegebene Benutzernamen existieren nicht.\\
+          3.a1 Benutzer bekommt entsprechenden Fehlerhinweis mit einer Aufforderung zur Überprüfung der Einagabe.\\
+    \item 3.b Benutzer befindet sich bereits in einer Gruppe mit dem selben Namen. \\
+          3.b1 Fehlerhinweis und Aufforderung zur Eingabe eines anderen Namen erscheint. \\
+\end{itemize}\\
+\\
+\end{samepage}
+
 \section{Non-Functional Requirements}
 
 \end{document}
