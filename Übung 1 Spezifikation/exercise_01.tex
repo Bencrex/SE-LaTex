@@ -266,7 +266,10 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \textbf{Trigger:} Die letzte unbeendete Subquest wird beendet\\
 \textbf{Preconditions:} Der Status von mindestens einer Subquest ist nicht abgeschlossen\\
 \textbf{Postconditions / Goal:} Der Status aller Subquests und damit der Status der Quest ist abgeschlossen, die Quest steht nicht mehr zur Bearbeitung bereit (Der Status kann nicht mehr geändert werden). \\
-\textbf{Postconditions Special Cases:} Besitzer akzeptiert die erfolgreiche Bearbeitung eines Bearbeiters einer Subquest nicht, Status der Quest und der Subquest stehen dann immer noch auf offen.\\
+\textbf{Postconditions Special Cases:} 
+\begin{itemize}
+    \item Besitzer akzeptiert die erfolgreiche Bearbeitung eines Bearbeiters einer Subquest nicht, Status der Quest und der Subquest stehen dann immer noch auf offen.\\
+\end{itemize}
 \textbf{Steps Default Case:}
 \begin{enumerate}
     \item Bearbeiter letzter offener Subquest setzt deren Status auf abgeschlossen
@@ -279,15 +282,48 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \begin{itemize}
 \item [3a] Besitzer lehnt die erfolgreiche Bearbeitung der letzten offenen
 \begin{itemize}
-    \item [3a1] Die Anfrage wird auf abgelehnt gesetzt.\\
+    \item [3a1] Die Anfrage wird auf abgelehnt gesetzt.
     \item [3a2] Der antragstellende Bearbeiter bekommt eine Mitteilung über die Ablehnung seiner Anfrage.
     Subquest ab.
 \end{itemize}
 \end{itemize}
 \end{samepage}
 
-\vspace{0.5cm}
+\newpage
+\begin{samepage}
+\textbf{Numbers:} SQ-1.1\\
+\textbf{Name:} Quest erstellen\\
+\textbf{Actors:} Benutzer\\
+\textbf{Trigger:} Benutzer möchte ein neues Quest hinzufügen\\
+\textbf{Preconditions:}  App befindet sich im Hauptmenü\\
+\textbf{Postconditions / Goal:} Quest wird erstellt und angezeigt\\
+\textbf{Postconditions Special Cases:}
+\begin{itemize}
+    \item Erstellung verweigert, wegen unzulässigem Namen des Quests
+    \item Erstellung verweigert, wegen fehlenden Informationen
+\end{itemize}
+\textbf{Steps Default Case:} 
+\begin{enumerate}
+    \item Benutzer klickt auf Quest hinzufügen
+    \item Benutzer gibt Daten bezüglich des erstellten Quests ein 
+    \item Eingegebene Daten werden überprüft 
+    \item Benutzer speichert das Quest
+\end{enumerate}
+\textbf{Special Cases:}
+\begin{itemize}
+    \item [3a] Ungültiger Questname (unerlaubte Zeichen oder Name bereits vorhanden)
+    \begin{itemize}
+        \item [3a1] Anzeigen von Fehlermeldung, dass Questname nicht zulässig ist
+        \item [3a2] Questerstellungsbildschirm wird angezeigt
+    \end{itemize}
+    \item [4a] Fehlende Informationen
+    \begin{itemize}
+        \item [4a1] Markieren von Textboxen von fehlenden Informationen
+    \end{itemize}
+\end{itemize}
+\end{samepage}
 
+\newpage
 \begin{samepage}
 \textbf{Numbers:} SQ-3.2\\
 \textbf{Name:} Benutzer registrieren\\
@@ -295,7 +331,10 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \textbf{Trigger:} Anwender installiert die App, öffnet diese und fordert eine Registrierung an.\\
 \textbf{Preconditions:} Das gewünschte Benutzerkonto existiert nicht im System. \\
 \textbf{Postconditions / Goal:} Ein Benutzerkonto existiert für den Anwender im System.\\
-\textbf{Postconditions Special Cases:} Es wurde ein neues Konto erstellt\\
+\textbf{Postconditions Special Cases:} 
+\begin{itemize}
+    \item Es wurde ein neues Konto erstellt
+\end{itemize}
 \textbf{Steps Default Case:}
 \begin{enumerate}
     \item Anwender fordert eine Registrierung im System an
@@ -314,6 +353,107 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \end{itemize}
 \end{samepage}
 
+\newpage
+\begin{samepage}
+    \textbf{Numbers:} SQ-1.2\\
+    \textbf{Name:} Quest löschen\\
+    \textbf{Actors:} Benutzer\\
+    \textbf{Trigger:} Benutzer möchte ein bestehendes Quest löschen\\
+    \textbf{Preconditions:}  App befindet sich im Hauptmenü\\
+    \textbf{Postconditions / Goal:} Quest wird gelöscht \\
+    \textbf{Postconditions Special Cases:} 
+    \begin{itemize}
+        \item Quest kann nicht gelöscht werden, da Benutzer nicht owner des Quests ist 
+    \end{itemize}
+    \textbf{Steps Default Case:} 
+    \begin{enumerate}
+        \item Benutzer wählt Quest aus, das gelöscht werden soll
+        \item Benutzer klickt auf Quest löschen
+        \item Hauptmenü wird angezeigt
+    \end{enumerate}
+    \textbf{Special Cases:}
+    \begin{itemize}
+        \item [2a] Fehlende Berechtigungen 
+        \begin{itemize}
+            \item [2a1] Fehlermeldung, da Benutzer nicht owner des Quests ist
+            \item [2a2] Hauptmenü wird angezeigt
+        \end{itemize}
+    \end{itemize}
+\end{samepage}
+
+\newpage
+\begin{samepage}
+    \textbf{Numbers:} SQ-1.3\\
+    \textbf{Name:} Benutzer löschen\\
+    \textbf{Actors:} Benutzer\\
+    \textbf{Trigger:} Benutzer möchte einen anderen Benutzer löschen\\
+    \textbf{Preconditions:}  App befindet sich in der Benutzerverwaltung\\
+    \textbf{Postconditions / Goal:} Löschung eines Benutzers\\
+    \textbf{Postconditions Special Cases:}
+    \begin{itemize}
+        \item Benutzer kann nicht gelöscht werden, da er noch aktiven Quests zugeteilt ist
+        \item Benutzer kann nicht gelöscht werden, da er nicht die notwendigen Berechtigungen hat
+    \end{itemize}
+    \textbf{Steps Default Case:} 
+    \begin{enumerate}
+        \item Benutzer wählt den zu löschenden Benutzer aus
+        \item Benutzer betätigt löschen
+        \item Benutzer bestätigt den Löschvorgang
+    \end{enumerate}
+\textbf{Special Cases:}
+\begin{itemize}
+    \item [2a] Löschvorgange Fehlgeschlagen (aktive Quests)
+    \begin{itemize}
+        \item [2a1] Fehlermeldung, dass Benutzer aufgrund von aktiven Quests nicht gelöscht werden kann
+        \item [2a2] Anzeigen von Quests, welche für den Fehlschlag des Löschvorganges verantwortlich sind
+    \end{itemize}
+    \item [2b] Fehlende Berechtigungen
+    \begin{itemize}
+        \item [2b1] Fehlermeldung, dass Benutzer aufgrund von fehlenden Berechtigungen nicht gelöscht werden kann
+        \item [2b2] Bildschirm Benutzerverwaltung wird angezeigt 
+    \end{itemize}
+\end{itemize}
+\end{samepage}
+
+\newpage
+\begin{samepage}
+    \textbf{Numbers:} SQ-1.4\\
+    \textbf{Name:} Plugin installieren\\
+    \textbf{Actors:} Benutzer\\
+    \textbf{Trigger:} Benutzer möchte ein Plugin istallieren\\
+    \textbf{Preconditions:}  Benutzer befindet sich im Plugin Browser\\
+    \textbf{Postconditions / Goal:} Erfolgreiche Installation von Plugin\\
+    \textbf{Postconditions Special Cases:}
+    \begin{itemize}
+        \item Installation nicht möglich aufgrund von fehlender Internetverbindung
+        \item Installation von Unbekannten Quellen wurde nicht zugestimmt
+    \end{itemize}
+    \textbf{Steps Default Case:} 
+    \begin{enumerate}
+        \item Benutzer öffnet Plugin Browser
+        \item Benutzer benutzt Suchleiste um gewünschtes Plugin zu suchen
+        \item Suchergebnise werden dargestellt 
+        \item Benutzer wählt gewünschtes Plugin aus
+        \item Benutzer wählt installieren
+    \end{enumerate}
+\textbf{Special Cases:}
+\begin{itemize}
+    \item [1a] Fehlende Zustimmung
+    \begin{itemize}
+        \item [1a1] Fehlermeldung, dass Installationen von unbekannten Quellen nicht zugestimmt wurde
+    \end{itemize}
+    \end{itemize}
+        
+\begin{itemize}
+    \item [2a] Fehlende Internetverbindung  
+    \begin{itemize}
+        \item [2a1] Fehlermeldung, dass keine Internetverbindung vorhanden ist 
+        \item [2a2] Anzeigen von Plugin Browser
+    \end{itemize}
+\end{itemize}
+\end{samepage}
+
+\newpage
 \section{Non-Functional Requirements}
 
 \end{document}
