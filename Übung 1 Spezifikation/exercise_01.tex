@@ -237,6 +237,7 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
     \item [3a] Ungültiger Questname (unerlaubte Zeichen oder Name bereits vorhanden)
     \begin{itemize}
         \item [3a1] Anzeigen von Fehlermeldung, dass Questname nicht zulässig ist
+        \item [3a2] Questerstellungsbildschirm wird angezeigt
     \end{itemize}
     \item [4a] Fehlende Informationen
     \begin{itemize}
@@ -265,6 +266,7 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
         \item [2a] Fehlende Berechtigungen 
         \begin{itemize}
             \item [2a1] Fehlermeldung, da Benutzer nicht owner des Quests ist
+            \item [2a2] Hauptmenü wird angezeigt
         \end{itemize}
     \end{itemize}
     \textbf{Numbers:} SQ-1.3\\
@@ -276,7 +278,7 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
     \textbf{Postconditions Special Cases:}
     \begin{itemize}
         \item Benutzer kann nicht gelöscht werden, da er noch aktiven Quests zugeteilt ist
-        \item Benutzer kann nicht gelösct werden, da er nicht die notwendigen Berechtigungen hat
+        \item Benutzer kann nicht gelöscht werden, da er nicht die notwendigen Berechtigungen hat
     \end{itemize}
     \textbf{Steps Default Case:} 
     \begin{enumerate}
@@ -294,10 +296,44 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
     \item [2b] Fehlende Berechtigungen
     \begin{itemize}
         \item [2b1] Fehlermeldung, dass Benutzer aufgrund von fehlenden Berechtigungen nicht gelöscht werden kann
-        \item [2b2] Bildschirm Benutzerverwaltung wird angezeigt
+        \item [2b2] Bildschirm Benutzerverwaltung wird angezeigt 
     \end{itemize}
 \end{itemize}
 
+\textbf{Numbers:} SQ-1.4\\
+    \textbf{Name:} Plugin installieren\\
+    \textbf{Actors:} Benutzer\\
+    \textbf{Trigger:} Benutzer möchte ein Plugin istallieren\\
+    \textbf{Preconditions:}  Benutzer befindet sich im Plugin Browser\\
+    \textbf{Postconditions / Goal:} Erfolgreiche Installation von Plugin\\
+    \textbf{Postconditions Special Cases:}
+    \begin{itemize}
+        \item Installation nicht möglich aufgrund von fehlender Internetverbindung
+        \item Installation von Unbekannten Quellen wurde nicht zugestimmt
+    \end{itemize}
+    \textbf{Steps Default Case:} 
+    \begin{enumerate}
+        \item Benutzer öffnet Plugin Browser
+        \item Benutzer benutzt Suchleiste um gewünschtes Plugin zu suchen
+        \item Suchergebnise werden dargestellt 
+        \item Benutzer wählt gewünschtes Plugin aus
+        \item Benutzer wählt installieren
+    \end{enumerate}
+\textbf{Special Cases:}
+\begin{itemize}
+    \item [1a] Fehlende Zustimmung
+    \begin{itemize}
+        \item [1a1] Fehlermeldung, dass Installationen von unbekannten Quellen nicht zugestimmt wurde
+    \end{itemize}
+    \end{itemize}
+        
+\begin{itemize}
+    \item [2a] Fehlende Internetverbindung  
+    \begin{itemize}
+        \item [2a1] Fehlermeldung, dass keine Internetverbindung vorhanden ist 
+        \item [2a2] Anzeigen von Plugin Browser
+    \end{itemize}
+\end{itemize}
 \section{Non-Functional Requirements}
 
 \end{document}
