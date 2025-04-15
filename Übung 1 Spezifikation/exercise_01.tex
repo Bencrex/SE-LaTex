@@ -271,6 +271,35 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \textbf{Special Cases:}\\
 \end{samepage}
 
+
+\begin{samepage}
+\textbf{Numbers:} SQ-3.1\\
+\textbf{Name:} Quest abschließen\\
+\textbf{Actors:} Besitzer der Quest, Bearbeiter der letzten Subquest\\
+\textbf{Trigger:} Die letzte unbeendete Subquest wird beendet\\
+\textbf{Preconditions:} Der Status von mindestens einer Subquest ist nicht abgeschlossen\\
+\textbf{Postconditions / Goal:} Der Status aller Subquests und damit der Status der Quest ist abgeschlossen, die Quest steht nicht mehr zur Bearbeitung bereit (Der Status kann nicht mehr geändert werden). \\
+\textbf{Postconditions Special Cases:} Besitzer akzeptiert die erfolgreiche Bearbeitung eines Bearbeiters einer Subquest nicht, Status der Quest und der Subquest stehen dann immer noch auf offen.\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+    \item Bearbeiter letzter offener Subquest setzt deren Status auf abgeschlossen
+    \item Besitzer bekommt eine Nachricht über die Statusänderung
+    \item Besitzer bestätigt die vollständige Bearbeitung der Subquest
+    \item Die Subquest und die gesamte Quest hat jetzt den Status abgeschlossen
+    \item Beteiligte Benutzer bekommen eine Nachricht, die auf die erfolgreiche Bearbeitung der Quest hinweist.
+\end{enumerate}\\
+\textbf{Special Cases:}
+\begin{itemize}
+    \item 3.a Besitzer lehnt die erfolgreiche Bearbeitung der letzten offenen\\
+          3.a1 Die Anfrage wird auf abgelehnt gesetzt.\\
+          3.a2 Der antragstellende Bearbeiter bekommt eine Mitteilung über die Ablehnung seiner Anfrage.
+    Subquest ab.
+\end{itemize}\\
+\\
+\end{samepage}
+
+
+
 Write the requirement specification of Sidequest.
 
 \section{Non-Functional Requirements}
