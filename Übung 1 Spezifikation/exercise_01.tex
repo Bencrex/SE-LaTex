@@ -150,10 +150,20 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \end{samepage}
 
 \begin{samepage}
+\textbf{Begriff:} Gruppe \\
+\textbf{Bedeutung:} Eine \textit{Gruppe} ist ein spezieller \textit{Benutzer}, der stellvertretend für eine Menge konkreter \textit{Benutzer} sowohl \textit{Besitzer} als auch \textit{Bearbeiter} sein kann. Anstelle dieses Gruppenbenutzers kann jedes Gruppenmitglied gleichermaßen \textit{Besitzer}- u. \textit{Bearbeiter} verändern und \textit{(Sub-)Quests}, die speziell für diese \textit{Gruppe} erstellt wurden, an Nichtmitglieder delegieren.
+ \\
+\textbf{Abgrenzung:} Benutzer \\
+\textbf{Gültigkeit:} Eine \textit{Gruppe} existiert von der Erstellung bis zur Löschung dieser. \\
+\textbf{Identifikation:} Die \textit{Gruppe} ist ein spezieller \textit{Benutzer} und wird daher auch durch eine interne ID identifiziert. \\
+\textbf{Querverweise:} \textit{Benutzer} \\ \\
+\end{samepage}
+
+\begin{samepage}
 \textbf{Begriff:} Hierarchisches Quest \\
-\textbf{Bedeutung:} Eine \textit{hyrarchisches Quest} ist ein \textit{Quest}, das \textit{Subquests} besitzt, die in einer bestimmten Reihenfolge abgearbeitet werden müssen.  \\
+\textbf{Bedeutung:} Eine \textit{hierarchisches Quest} ist ein \textit{Quest}, das \textit{Subquests} besitzt, die in einer bestimmten Reihenfolge abgearbeitet werden müssen.  \\
 \textbf{Abgrenzung:} Quest \\
-\textbf{Identifikation:} Eine \textit{hyrarchisches Quest} wird über eine interne ID identifiziert. \\
+\textbf{Identifikation:} Eine \textit{hierarchisches Quest} wird über eine interne ID identifiziert. \\
 \textbf{Querverweise:} \textit{Haupquest}, \textit{Sidequest} \\ \\
 \end{samepage}
 
@@ -187,8 +197,7 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
         \item R1.1 Jede \textit{Quest} bzw. \textit{Subquest} hat sowohl Besitzer als auch Bearbeiter, beide können unabhängig von einander an andere Nutzer übertragen werden.
 	\item R1.2 Die Übertragung eine \textit{(Sub-)Quest} kann sowohl beim aktuellen 	Besitzer als auch beim Bearbeiter angefragt werden, diese können die Anfrage annehmen oder ablehnen (User werden bekannt durch peröhnliches Austauschen der Profildaten oder durch Mitgliedschaft in einer gemeinsamen Gruppe).
  	\item R1.3 Der aktuelle Besitzer/Bearbeiter kann auch einen anderen User um Übernahme einer \textit{(Sub-)Quest} bitten, welche diese annehmen können.
-  	
-    \end{itemize}
+    \end{itemize}    
 
 \item R2 Löschen von \textit{Quests} (Datenschutzbeauftragter) 
 	\begin{itemize}
@@ -230,11 +239,20 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
         \item R 7.1 Der Name und die E-Mailadresse eines \textit{Benutzer}s müssen sich ändern lassen
         \item R 7.2 Ein \textit{Benutzer} kann die Einwilligung der Datenverarbeitung durch KI zurückziehen
     \end{itemize}
-\item R8 Belohnungssystem (Fabian Strauß)
+
+\begin{itemize}
+\item R8 Anlage von \textit{Gruppen} zur gemeinsamen Bearbeitung von \textit{Quests} (Fabian Strauß)
     \begin{itemize}
-        \item R 8.1 \textit{Quests} bzw. \textit{Subquests} müssen Belohnungspunkte zugewiesen werden können, auf dessen Basis die App solche Punkte für andere \textit{Benutzer} bei Erledigung vergibt. Die KI-Unterstützung soll eine Klassifizierung der (Unter-)Aufgaben vornehmen, um die automatische Punktevergabe zu optimieren.
-        \item R 8.2 \textit{Benutzer} sollen zusätzlich progressiv steigende Boni auf erledigte Aufgaben bekommen können, wenn diese zb. täglich erledigt werden mit Beginn von vorne, falls ein Benutzer die Kette unterbricht.
-        \item R 8.3 Ein für jeden \textit{Benutzer} sichtbares Ranking soll existieren, dass die \textit{Benutzer} mit den höchsten Punktzahlen dort auflistet.
+        \item R1.1 Jeder \textit{Benutzer} soll \textit{Gruppen} anlegen können. \textit{(Sub-)Quests} können dann speziell für diese \textit{Gruppe} zur Bearbeitung erstellt werden.
+	\item R1.2 Im Gegensatz zu normalen \textit{(Sub-)Quests} sollen alle Gruppenmitglieder Besitzerrechte ausüben und delegieren können, \textit{Besitzer} bleibt jedoch bei Gruppenquests immer die \textit{Gruppe}. Die Bearbeitung kann auch an Nichtmitglieder delegiert werden.
+    \end{itemize}
+
+    
+\item R9 Belohnungssystem (Fabian Strauß)
+    \begin{itemize}
+        \item R 9.1 \textit{Quests} bzw. \textit{Subquests} müssen Belohnungspunkte zugewiesen werden können, auf dessen Basis die App solche Punkte für andere \textit{Benutzer} bei Erledigung vergibt. Die KI-Unterstützung soll eine Klassifizierung der (Unter-)Aufgaben vornehmen, um die automatische Punktevergabe zu optimieren.
+        \item R 9.2 \textit{Benutzer} sollen zusätzlich progressiv steigende Boni auf erledigte Aufgaben bekommen können, wenn diese zb. täglich erledigt werden mit Beginn von vorne, falls ein Benutzer die Kette unterbricht.
+        \item R 9.3 Ein für jeden \textit{Benutzer} sichtbares Ranking soll existieren, dass die \textit{Benutzer} mit den höchsten Punktzahlen dort auflistet.
     \end{itemize}
 
 \end{itemize}
