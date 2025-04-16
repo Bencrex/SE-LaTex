@@ -496,36 +496,76 @@ Please group yourself in teams of 3-4 persons. Agree on a team name.
 \textbf{Actors:} Benutzer\\
 \textbf{Trigger:} Benutzer möchten ihre Benutzerdaten ändern\\
 \textbf{Preconditions:}  System ist in ein Benutzerkonto eingeloggt, Benutzer befindet sich in den Benutzereinstellungen\\
-\textbf{Postconditions / Goal:} Der Benutzer kann seinen Benutzernamen, seine E-mail oder sein Passwort ändern.\\
-\textbf{Postconditions Special Cases:} 
+\textbf{Postconditions / Goal:} Der Benutzer kann seinen Benutzernamen, seine E-mail oder sein Passwort geändert.\\
+\textbf{Postconditions Special Cases:}
 \begin{itemize}
-    \item Die eingegebenen Daten für den Benutzernamen oder die E-Mail enthalten komische Umlaute
-    	\item Benutzername oder E-Mail existieren bereits, siehe SQ-3.2 3a1
-    	\item Das Passwort besteht den Sicherheitscheck nicht
-    	\item Das Passwort wurde wiederholt falsch eingegeben
+    \item Der/Die/Das neue Benutzername, E-Mail oder Passwort wird nicht gespeichert, es wird eine entsprechende Fehlermeldung ausgegeben
 \end{itemize}
 \textbf{Steps Default Case:}
 \begin{enumerate}
-    \item Benutzer wählt Persönliche Daten aus
+    \item Benutzer wählt "Persönliche Daten" aus
     \item Benutzer wählt Benutzernamen, E-Mail oder Passwort bearbeiten aus
-    \item Benutzer bearbeitet Benutzernamen, E-Mail oder Passwort
     \item Benutzer gibt neue/s/n Benutzernamen, E-Mail oder Passwort ein (beim Passwort sind zwei Eingaben erforderlich)
     \item Benutzer klickt auf Speichern
 \end{enumerate}
 \textbf{Special Cases:}
 \begin{itemize}
-    \item [3a] Eingegebene Benutzernamen existieren nicht.
-    \begin{itemize}
-        \item [3a1] Benutzer bekommt entsprechenden Fehlerhinweis mit einer Aufforderung zur Überprüfung der Einagabe.
-    \end{itemize}
-    \item [3b] Benutzer befindet sich bereits in einer Gruppe mit dem selben Namen. 
-    \begin{itemize}
-        \item [3b1] Fehlerhinweis und Aufforderung zur Eingabe eines anderen Namen erscheint. 
-    \end{itemize}
+    \item [4a] siehe SQ-3.2 3a1
+	\item [4b] Die erneute Eingabe des Passwort ist falsch
+	\item [4c] Die E-Mail, der Benutzername enthalen komische Umlaute
 \end{itemize}
 \end{samepage}
 
 \newpage
+
+\begin{samepage}
+\textbf{Numbers:} SQ-2.2\\
+\textbf{Name:} Questanfrage ablehnen\\
+\textbf{Actors:}	Benutzer\\
+\textbf{Trigger:} Der Benutzer erhält eine Questanfrage\\
+\textbf{Preconditions:} System ist in ein Benutzerkonto eingeloggt, Benutzer befindet sich in der Hauptansicht\\
+\textbf{Postconditions / Goal:} Der Benutzer wird der Quest nicht als Bearbeiter hinzugefügt\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+	\item Benutzer bekommt eine Questanfrage
+	\item Der Benutzer klickt auf Ablehnen
+\end{enumerate}
+\end{samepage}
+
+\newpage
+
+\begin{samepage}
+\textbf{Numbers:} SQ-2.3\\
+\textbf{Name:} Questanfrage annehmen\\
+\textbf{Actors:}	Benutzer\\
+\textbf{Trigger:} Der Benutzer erhält eine Questanfrage\\
+\textbf{Preconditions:} System ist in ein Benutzerkonto eingeloggt, Benutzer befindet sich in der Hauptansicht\\
+\textbf{Postconditions / Goal:} Der Benutzer wird der Quest als Bearbeiter hinzugefügt und die Quest wird hinzugefügt.\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+	\item Benutzer bekommt eine Questanfrage
+	\item Der Benutzer klickt auf Annehmen
+\end{enumerate}
+\end{samepage}
+
+\newpage
+
+\begin{samepage}
+\textbf{Numbers:} SQ-2.4\\
+\textbf{Name:} Gruppenanfrage annehmen\\
+\textbf{Actors:}	Benutzer\\
+\textbf{Trigger:} Der Benutzer erhält eine Gruppenanfrage\\
+\textbf{Preconditions:} System ist in ein Benutzerkonto eingeloggt, Benutzer befindet sich in der Hauptansicht\\
+\textbf{Postconditions / Goal:} Der Benutzer wird zur Gruppe hinzugefügt\\
+\textbf{Steps Default Case:}
+\begin{enumerate}
+	\item Benutzer bekommt eine Gruppenanfrage
+	\item Der Benutzer klickt auf Annehmen
+\end{enumerate}
+\end{samepage}
+
+\newpage
+
 \section{Non-Functional Requirements}
 
 \end{document}
