@@ -12,6 +12,7 @@
 \usepackage{titlesec}
 \usepackage{amsmath}
 \usepackage{tabularx}
+\usepackage{xcolor}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy} 
@@ -148,6 +149,16 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 \textbf{Querverweise:} \textit{Quest}, \textit{Haupquest}, \textit{Sidequest} \\ \\
 \end{samepage}
 
+\textcolor{blue}
+{
+\begin{samepage}
+\textbf{Begriff:} Rangsystem\\
+\textbf{Bedeutung:} Das Rangsystem ermöglicht es \textit{Quests} Punkte zuzuordnen, welche bei Erledigung (R2) vergeben werden\\ 
+\textbf{Gültigkeit:} Das Rangsystem für eine Gruppe ist Gültig von der Aktivierung bis zur Deaktivierung.
+\textbf{Querverweise:} \textit{Quest}\\
+\end{samepage}
+}
+
 \begin{samepage}
 \textbf{Begriff:} Subquest \\
 \textbf{Bedeutung:} Eine \textit{Subquest} ist eine \textit{Quest}, die einer anderen \textit{Quest} untergeordnet ist. Um eine \textit{Quest} zu erfüllen, müssen zunächst alle \textit{Subquests} erfüllt werden. \\
@@ -234,6 +245,7 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 \begin{itemize}
 	\item{R5.1} \textit{Benutzer} können \textit{Quests} löschen, wenn sie \textit{Besitzer} sind. Eine \textit{Quest} kann weich gelöscht werden. Das weiche Löschen ist der Standardfall und soll so komfortabel wie möglich umgesetzt werden. Wird eine  \textit{Quest}  gelöscht, so werden alle  \textit{Subquests} ebenfalls gelöscht.
 	\item{R5.2} \textit{Quests} können hart gelöscht werden.
+	\textcolor{blue}{\item{R5.3} Hatte das zu löschende \textit{Quest} das \textit{Rangsystem} aktiviert, so müssen bei der Löschung entsprechend die vergebenen Punkte angepasst werden.}
 \end{itemize}
 
 \subsubsection{R6 Quest Bearbeiten}
@@ -281,7 +293,7 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 		\item{O 2.2} Jedes Mitglied? der Gruppe kriegt bei der Fertigstellung? der Quest (vgl. R2) die Punktzahl (vgl. R 9.1) auf seine Identität in der Gruppe gutgeschrieben --! Mitglied+Fertigstellung evtl. in's Dictionary einpflegen; --! Wie genau werden die Punkte jemandem innerhalb der Gruppe gutgeschrieben? (was ist eine Identität?)
 		\item{O 2.3} Jedes Mitglied? der \textit{Gruppe} kann die erzielte Punktzahl innerhalb der letzten Woche sehen. Für die Darstellung wird ein Balkendiagramm verwendet, wobei die Benutzer nach Punktzahl sortiert von oben nach unten angezeigt werden. --!wie komme ich zum Balkendiagramm? --! woher bekomme ich die Punktzahl der letzten Woche?
 		\item{O 2.4} Jedes Mitglied der \textit{Gruppe} kann die insgesamt erzielte Punktzahl der Benutzer einsehen. Für die Darstellung wird eine Tabelle verwendet, hierbei ist der Rang in der linken, der Name in der mittleren und die erzielte Punktzahl in der rechten Spalte einzusehen. --!wie erreich ich diese Ansicht? Woher bekomme ich die Punktzahl der einzelnen Person?
-		\item{O 2.5} Wenn ein \textit{Quest} aus \textit{Subquests} besteht errechnet sicht die Punktzahl des Quests aus der Summe der Punktzahlen der Subquests
+		\textcolor{blue}{\item{O 2.5} Wenn ein \textit{Quest} aus \textit{Subquests} besteht errechnet sicht die Punktzahl des \textit{Quests} aus der Summe der Punktzahlen der \textit{Subquests}. Das selbe gilt für \textit{Subquests}, welche wiederum aus \textit{Subquests} bestehten. Sind ein Teil der \textit{Subquests} erledigt, wird dynamisch beim \textit{Quest} die noch zu holenden Punkte angezeigt.}
 	\end{itemize}
 
 \subsection{Use-Cases}
