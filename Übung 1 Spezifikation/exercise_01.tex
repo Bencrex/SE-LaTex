@@ -293,7 +293,14 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 		\item{O 2.2} Jedes Mitglied? der Gruppe kriegt bei der Fertigstellung? der Quest (vgl. R2) die Punktzahl (vgl. R 9.1) auf seine Identität in der Gruppe gutgeschrieben --! Mitglied+Fertigstellung evtl. in's Dictionary einpflegen; --! Wie genau werden die Punkte jemandem innerhalb der Gruppe gutgeschrieben? (was ist eine Identität?)
 		\item{O 2.3} Jedes Mitglied? der \textit{Gruppe} kann die erzielte Punktzahl innerhalb der letzten Woche sehen. Für die Darstellung wird ein Balkendiagramm verwendet, wobei die Benutzer nach Punktzahl sortiert von oben nach unten angezeigt werden. --!wie komme ich zum Balkendiagramm? --! woher bekomme ich die Punktzahl der letzten Woche?
 		\item{O 2.4} Jedes Mitglied der \textit{Gruppe} kann die insgesamt erzielte Punktzahl der Benutzer einsehen. Für die Darstellung wird eine Tabelle verwendet, hierbei ist der Rang in der linken, der Name in der mittleren und die erzielte Punktzahl in der rechten Spalte einzusehen. --!wie erreich ich diese Ansicht? Woher bekomme ich die Punktzahl der einzelnen Person?
-		\textcolor{blue}{\item{O 2.5} Wenn ein \textit{Quest} aus \textit{Subquests} besteht errechnet sicht die Punktzahl des \textit{Quests} aus der Summe der Punktzahlen der \textit{Subquests}. Das selbe gilt für \textit{Subquests}, welche wiederum aus \textit{Subquests} bestehten. Sind ein Teil der \textit{Subquests} erledigt, wird dynamisch beim \textit{Quest} die noch zu holenden Punkte angezeigt.}
+		\textcolor{blue}
+		{
+		\item{O 2.5} Wenn ein \textit{Quest} aus \textit{Subquests} besteht errechnet sicht die Punktzahl des \textit{Quests} aus der Summe der Punktzahlen der \textit{Subquests}. Das selbe gilt für \textit{Subquests}, welche wiederum aus \textit{Subquests} bestehten. Sind ein Teil der \textit{Subquests} erledigt, wird dynamisch beim \textit{Quest} die noch zu holenden Punkte angezeigt.
+		\item{O 2.6} Die Punktzahl von einem \textit{(Side-) Quest} kann nachträglich vom \textit{Besitzer} geändert werden, sofern es noch keinen \textit{Bearbeiter} gibt.
+		\item{O 2.7} \textit{(Sub-) Quests} in \textit{Gruppen}, welche das \textit{Rangsystem} aktiviert haben können nicht an \textit{Benutzer} außerhalb der Gruppe delegiert werden. 
+		}
+
+
 	\end{itemize}
 
 \subsection{Use-Cases}
@@ -329,6 +336,36 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 
 \newpage
 
+\begin{samepage}
+	\textbf{Numbers:} SQ-2\\
+	\textbf{Name:} Punktzahl ändern\\
+	\textbf{Actors:} \textit{Besitzer} der \textit{Quest}\\
+	\textbf{Trigger:} Die letzte offene \textit{Subquest} einer \textit{Quest} wird erledigt.\\
+	\textbf{Preconditions:} Eine \textit{Quest} (Q\textsubscript{parent}) hat den Status ``offen'' und genau eine \textit{Subquest} (Q\textsubscript{child}), hat ebenfalls den Status ``offen''. \\
+	\textbf{Postconditions / Goal:} Der Status von Q\textsubscript{parent} ist ``erledigt''. \\
+	\textbf{Postconditions Special Cases:} 
+	\begin{itemize}
+		\item[3a] Der Status von Q\textsubscript{parent} bleibt ``offen''. 
+		\item[4a] Der Status der übergeordneten Quests wird ebenfalls auf ``erledigt'' gesetzt. 
+		\item[5a] Der Status der gesamten Questhierarchie wird auf ``inaktiv'' gesetzt.
+	\end{itemize}
+	\textbf{Steps Default Case:}
+	\begin{itemize}
+		\item[1] \textit{Bearbeiter} der letzter offener \textit{Subquest} setzt deren Status auf ``erledigt''.
+		\item[2] Der \textit{Besitzer} von Q\textsubscript{parent} bekommt eine Nachricht über die Statusänderung und wird gefragt, ob Q\textsubscript{parent} ebenfalls  als ``erledigt'' gesetzt werden soll.
+		\item[3] Der \textit{Besitzer} Q\textsubscript{parent} bestätigt die vollständige Bearbeitung der übergeordneten \textit{Quest}.
+		\item[4] Es wird überprüft, ob Q\textsubscript{parent} wiederum eine übergeordnete \textit{Quest} besitzt, die die Precondition von SQ-1 erfüllt, so dass sich der Use-Case rekursiv fortsetzt. 
+		\item[5] Es wird überprüft, ob in der gesamten \textit{Questhierarchie} von Q\textsubscript{child} keine \textit{Quest} mehr den Status ``offen'' hat (in diesem Fall 5a). 
+	\end{itemize}
+	\textbf{Special Cases:}
+	\begin{itemize}
+	\item [3a] Besitzer lehnt es ab  Q\textsubscript{parent} auf ``erledigt'' zu setzen.
+	\item [4a] Weiter mit Schritt 1, wobei Q\textsubscript{parent} die Rolle von Q\textsubscript{child} einnimmt. 
+	\item [5a] Die gesamte \textit{Questhierarchie} wird auf den Status ``inaktiv'' gesetzt und ausgeblendet. 
+	\end{itemize}
+	\end{samepage}
+
+\newpage
 \section{Nicht Funktionale Anforderungen}
 
 \subsubsection{NF1 Systemumgebung}
