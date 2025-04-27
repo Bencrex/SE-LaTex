@@ -338,30 +338,33 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 
 \begin{samepage}
 	\textbf{Numbers:} SQ-2\\
-	\textbf{Name:} Punktzahl ändern\\
-	\textbf{Actors:} \textit{Besitzer} der \textit{Quest}\\
-	\textbf{Trigger:} Die letzte offene \textit{Subquest} einer \textit{Quest} wird erledigt.\\
-	\textbf{Preconditions:} Eine \textit{Quest} (Q\textsubscript{parent}) hat den Status ``offen'' und genau eine \textit{Subquest} (Q\textsubscript{child}), hat ebenfalls den Status ``offen''. \\
-	\textbf{Postconditions / Goal:} Der Status von Q\textsubscript{parent} ist ``erledigt''. \\
+	\textbf{Name:} Quest löschen\\
+	\textbf{Actors:} \textit{Besitzer} der \textit{Quest}, \textit{Benutzer}\\
+	\textbf{Trigger:} \textit{Besitzer} löscht (Sub-) Quest\\ 
+	\textbf{Preconditions:} Quest existiert \\ 
+	\textbf{Postconditions / Goal:} Quest wurde gelöscht / Punkte angepasst\\
 	\textbf{Postconditions Special Cases:} 
 	\begin{itemize}
-		\item[3a] Der Status von Q\textsubscript{parent} bleibt ``offen''. 
-		\item[4a] Der Status der übergeordneten Quests wird ebenfalls auf ``erledigt'' gesetzt. 
-		\item[5a] Der Status der gesamten Questhierarchie wird auf ``inaktiv'' gesetzt.
+		\item Punktzahl wird angepasst 
+		\item Löschvorgang verweigert
 	\end{itemize}
 	\textbf{Steps Default Case:}
 	\begin{itemize}
-		\item[1] \textit{Bearbeiter} der letzter offener \textit{Subquest} setzt deren Status auf ``erledigt''.
-		\item[2] Der \textit{Besitzer} von Q\textsubscript{parent} bekommt eine Nachricht über die Statusänderung und wird gefragt, ob Q\textsubscript{parent} ebenfalls  als ``erledigt'' gesetzt werden soll.
-		\item[3] Der \textit{Besitzer} Q\textsubscript{parent} bestätigt die vollständige Bearbeitung der übergeordneten \textit{Quest}.
-		\item[4] Es wird überprüft, ob Q\textsubscript{parent} wiederum eine übergeordnete \textit{Quest} besitzt, die die Precondition von SQ-1 erfüllt, so dass sich der Use-Case rekursiv fortsetzt. 
-		\item[5] Es wird überprüft, ob in der gesamten \textit{Questhierarchie} von Q\textsubscript{child} keine \textit{Quest} mehr den Status ``offen'' hat (in diesem Fall 5a). 
+		\item[1] \textit{Besitzer} wählt Quest aus
+		\item[2] \textit{Besitzer} wählt Option löschen
+		\item[3] \textit{Quest} wird gelöscht 
 	\end{itemize}
 	\textbf{Special Cases:}
 	\begin{itemize}
-	\item [3a] Besitzer lehnt es ab  Q\textsubscript{parent} auf ``erledigt'' zu setzen.
-	\item [4a] Weiter mit Schritt 1, wobei Q\textsubscript{parent} die Rolle von Q\textsubscript{child} einnimmt. 
-	\item [5a] Die gesamte \textit{Questhierarchie} wird auf den Status ``inaktiv'' gesetzt und ausgeblendet. 
+	\item [2a] Löschvorgang verweigert
+	\begin{itemize}
+		\item [2a1] Fehlermeldung mit Name des Besitzers der Quest wird ausgegeben 
+	\end{itemize} 
+	\item [3a] Aktives Rangsystem / Bearbeiter vorhanden
+	\begin{itemize}
+		\item [3a1] Alle betroffenen Bearbeiter der Quest werden benachrichtigt, dass die Quest gelöscht wird
+		\item [3a2] Im Falle eines aktiven Rangsystems werden Punkte von bereits abgeschlossenen Subquests den Bearbeitern, welche diese abgeschlossen haben, wieder abgezogen
+	\end{itemize}
 	\end{itemize}
 	\end{samepage}
 
