@@ -376,6 +376,39 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 	\end{itemize}
 	\end{samepage}
 
+\begin{samepage}
+	\textbf{Numbers:} SQ-3 \\
+	\textbf{Name:} Gruppe erstellen \\
+	\textbf{Actors:} \textit{Benutzer}, angebene Gruppenteilnehmer \\
+	\textbf{Trigger:} \textit{Benutzer} will eine Neuanlage und wählt den Typ Gruppe aus \\ 
+	\textbf{Preconditions:} \textit{Benutzer} existiert und ist eingeloggt \\ 
+	\textbf{Postconditions / Goal:} Die neue \textit{Gruppe} existiert im System \\
+	\textbf{Postconditions Special Cases:} Die neue \textit{Gruppe} existiert im System \\
+	\textbf{Steps Default Case:}
+	\begin{itemize}
+		\item[1] \textit{Benutzer} wählt Neuanlage, dann Gruppe statt Quest aus.
+		\item[2] Eine beliebige Anzahl weiterer \textit{Benutzer} können per Benutzername oder E-Mail eingegeben werden.
+		\item[3] Das System überprüft die Benutzerdaten und fügt die \textit{Benutzer} vorerst hinzu.
+  		\item[4] Jedem Gruppenmitglied wird eine Nachricht gesendet, die über das Hinzufügen informiert, aber die Ablehnung neben der Kenntnisnahme anbietet.
+    		\item[5] Der Benutzer bestätigt, das System generiert einen Gruppennamen aus den Namen der Mitglieder und legt die Gruppe.
+      		\item[6] Die anderen Mitglieder lehnen das Hinzufügen nicht ab und sind weiterhin Teil der Gruppe.
+	\end{itemize}
+	\textbf{Special Cases:}
+	\begin{itemize}
+	\item [3a] Die Überprüfung schlägt fehl, die nicht gefundenen Benutzernamen/E-Mails werden entfernt und ein Fehlerhinweis wird ausgegeben. Weiter mit Schritt 2.
+ 	\item [5b] Der Benutzer gibt einen eigenen Gruppennamen ein und bestätigt, in dem Fall bleibt der Name bestehen und das System legt die Gruppe an.
+  	\item [6c] Ein oder mehrere Mitglieder lehnen die Teilnahme ab, sie werden dann aus der Gruppe gelöscht.
+	\begin{itemize}
+		\item [2a1] Fehlermeldung mit Name des Besitzers der Quest wird ausgegeben 
+	\end{itemize} 
+	\item [3a] Aktives Rangsystem / Bearbeiter vorhanden
+	\begin{itemize}
+		\item [3a1] Alle betroffenen Bearbeiter der Quest werden benachrichtigt, dass die Quest gelöscht wird
+		\item [3a2] Im Falle eines aktiven Rangsystems werden Punkte von bereits abgeschlossenen Subquests den Bearbeitern, welche diese abgeschlossen haben, wieder abgezogen
+	\end{itemize}
+	\end{itemize}
+	\end{samepage}
+
 \newpage
 \section{Nicht Funktionale Anforderungen}
 
