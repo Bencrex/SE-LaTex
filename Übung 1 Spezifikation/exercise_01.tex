@@ -149,15 +149,14 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 \textbf{Querverweise:} \textit{Quest}, \textit{Haupquest}, \textit{Sidequest} \\ \\
 \end{samepage}
 
-\textcolor{blue}
-{
+
 \begin{samepage}
 \textbf{Begriff:} Rangsystem\\
 \textbf{Bedeutung:} Das Rangsystem ermöglicht es \textit{Quests} Punkte zuzuordnen, welche bei Erledigung (R2) vergeben werden\\ 
 \textbf{Gültigkeit:} Das Rangsystem für eine Gruppe ist Gültig von der Aktivierung bis zur Deaktivierung.
 \textbf{Querverweise:} \textit{Quest}\\
 \end{samepage}
-}
+
 
 \begin{samepage}
 \textbf{Begriff:} Subquest \\
@@ -245,7 +244,7 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 \begin{itemize}
 	\item{R5.1} \textit{Benutzer} können \textit{Quests} löschen, wenn sie \textit{Besitzer} sind. Eine \textit{Quest} kann weich gelöscht werden. Das weiche Löschen ist der Standardfall und soll so komfortabel wie möglich umgesetzt werden. Wird eine  \textit{Quest}  gelöscht, so werden alle  \textit{Subquests} ebenfalls gelöscht.
 	\item{R5.2} \textit{Quests} können hart gelöscht werden.
-	\textcolor{blue}{\item{R5.3} Hatte das zu löschende \textit{Quest} das \textit{Rangsystem} aktiviert, so müssen bei der Löschung entsprechend die vergebenen Punkte angepasst werden.}
+	\item{R5.3} Hatte das zu löschende \textit{Quest} das \textit{Rangsystem} aktiviert, so müssen bei der Löschung entsprechend die vergebenen Punkte angepasst werden.
 \end{itemize}
 
 \subsubsection{R6 Quest Bearbeiten}
@@ -434,8 +433,14 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 		\begin{itemize}
 			\item [2a1] Ändern der Punktzahl des Quests vom gelöschten Sidequest um dessen Punktebetrag
 		\end{itemize}   
-		\item [5b] 
-		\item [6c] 
+		\item [2b] Benutzer schließt Sidequest ab (SQ-1)
+		\begin{itemize}
+			\item [2b1] Ändern der zu holenden Punkte werden beim Quest um den Wert des abgeschlossenen Sidequest angepasst
+		\end{itemize}
+		\item [3a] Ungültige Punktezahl 
+		\begin{itemize}
+			\item [3a1] Ausgabe Fehlermeldung
+		\end{itemize}
 		\end{itemize} 
 		\end{samepage}
 
