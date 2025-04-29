@@ -277,31 +277,23 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 
        
 \subsubsection{O1 Whatsapp  Integration (optional, Tim Dahmen)}
-    \begin{itemize}
-        \item{O 1.1} Eine Sidequest \textit{Gruppe} kann vom Besitzer der  \textit{Gruppe} mit einer Whatsappgruppe verknüpft werden. 
-        \item{O 1.2} Ist eine \textit{Gruppe} mit Whatsapp verknüpft, so sendet das System automatisch Nachrichten in die Whatsappgruppe, wenn in der \textit{Gruppe} eine in der Quest erledigt, geändert, oder angelegt wird.
-        \item{O 1.3} Ist eine \textit{Gruppe} mit Whatsapp verknüpft, so sendet das System automatisch Nachrichten in die Whatsappgruppe, wenn ein Benutzer einer Gruppe beitritt oder diese verlässt.
-        \item{O 1.4} Die Verknüpfung einer Sidequest \textit{Gruppe} mit einer Whatsappgruppe kann vom Besitzer der  \textit{Gruppe} wieder aufgelöst werden.  
-        \item{O 1.5} Ein \textit{Benutzer} kann die Whatsapp Benachrichtigungen pro Quest oder pro Gruppe stumm schalten und die Stummschaltung wieder aufheben. Die Stummschaltung betrifft dann nur diesen Benutzer. 
-        \item{O 1.6} Ein \textit{Benutzer} kann sich mit seinen Whatsapp Account verknüpfen und dies wieder aufheben. 
-        \item{O 1.7} Ist ein \textit{Benutzer} mit einem Whatsapp Account verknüpft, so erhält der Whatsapp Benutzer Benachrichtigungen wie in O 1.2 und O 1.3 für alle \textit{Quest} und \textit{Gruppen}, mit denen der \textit{Benutzer}  verknüpft ist. 
+      \begin{itemize}
+	\item{O 2.1} Der Ersteller einer \textit{Quest} (vgl. R1.1) wird nun außerdem gebeten eine Punktzahl von 1-10 einzugeben, welche beschreiben soll wie schwierig die Quest ist. 			Diese Punktzahl kann nachträglich nur vom Besitzer geändert werden, sie wird in der Questinformation angezeigt. Wird eine Quest durch Subquests verfeinert, wird die Punktzahl 			durch die Summe der Subquestpunkte ersetzt.
+
+	\item{O 2.2} Die Punktzahl wird bei Abschluss einer (Sub-)Quest dem/den Bearbeiter/n gutgeschrieben bzw. gespeichert. Wurde eine (Sub-)Quest an ein Nichtmitglied delegiert, so 		werden niemandem die Punkte gutgeschrieben. \\
+  	Bereits erziehlte Punkte werden von der Gesamtpunktanzahl in der Questinformationsanzeige abgezogen, die noch nicht vergebenen Punkte werden von der Gesamtanzahl vom System 			unterschieden.
+
+        \item{O 2.3} In der Profilanzeige eines Benutzers, der in einer Gruppe bzw. einer Gruppenquest als Besitzer oder Bearbeiter erscheint, werden als gruppenspezifische Information 		zusätzlich die Anzahl der zuletzt erreichten Punkte angezeigt. Dies sind standartgemäß die Gesamtpunktzahl der letzten Woche, wahlweise lässt sich aber auch die Anzeige der Punktzahl 		des letzten Monats, Jahres oder der Gesamtpunktanzahl im Profil konfigurieren.
+    		
+        % Zur Umsetzung: 
+        %Eine Gruppe besteht nicht direkt aus Benutzern sondern aus Mitgliedern, die Benutzer mit gruppenspezifischen Zusatzinformationen darstellen. Nur für das bzw. die bearbeitenden 		Mitglieder einer (Sub-)Quest) werden die Punkte bei Abschluss zusätzlich festgehalten (solange sie Gruppenmitglied sind). Festgehalten werden die Quest-ID, der Abschlusszeitpunkt und 		die zugehörigen Punkte
+
+        \item{O 2.4} Die Profilinformation der Gruppe enthält das Gesamtranking der Mitglieder dargestellt als  Tabelle, die den Rang in Form einer Nummerierung, den Namen des Benutzers und 		die zugehörige Punktzahl enthält.
+        Wahlweise kann die Anzeige auf wöchentlich, monatlich oder jährlich umgestellt werden, um relative Ergebnisse anzuzeigen. Ein gewünschter Zeitraum kann dann dementsprechend angegeben 		werden.
+
+        \item{O 2.5} Innerhalb einer Gruppe und deren (Sub-)Quests erscheinende Namen von Gruppenmitgliedern erhalten als Zusatzzeichen ein für jeden sichtbares Icon dahinter, wenn sie zu den 	drei Mitgliedern mit der höchsten Gesamtpunktzahl dieser Gruppe gehören (Goldener, silberner und bronzefarbener Pokal). Die Ranginfo besonders fleißiger Mitglieder soll so überall 		innerhalb der Gruppe erkennbar sein.
+	
     \end{itemize}
-
-\subsubsection{O2 Rangsystem in Gruppen (optinal, Marco Bencic, Benjamit Klett, Fabian Strauß)}
-	\begin{itemize}
-		\item{O 2.1} Der Ersteller? einer \textit{Quest} (vgl. R1.1) wird nun außerdem gebeten eine Punktzahl von 1-10 einzugeben, welche beschreiben soll wie schwierig die Quest ist.
-		\item{O 2.2} Jedes Mitglied? der Gruppe kriegt bei der Fertigstellung? der Quest (vgl. R2) die Punktzahl (vgl. R 9.1) auf seine Identität in der Gruppe gutgeschrieben --! Mitglied+Fertigstellung evtl. in's Dictionary einpflegen; --! Wie genau werden die Punkte jemandem innerhalb der Gruppe gutgeschrieben? (was ist eine Identität?)
-		\item{O 2.3} Jedes Mitglied? der \textit{Gruppe} kann die erzielte Punktzahl innerhalb der letzten Woche sehen. Für die Darstellung wird ein Balkendiagramm verwendet, wobei die Benutzer nach Punktzahl sortiert von oben nach unten angezeigt werden. --!wie komme ich zum Balkendiagramm? --! woher bekomme ich die Punktzahl der letzten Woche?
-		\item{O 2.4} Jedes Mitglied der \textit{Gruppe} kann die insgesamt erzielte Punktzahl der Benutzer einsehen. Für die Darstellung wird eine Tabelle verwendet, hierbei ist der Rang in der linken, der Name in der mittleren und die erzielte Punktzahl in der rechten Spalte einzusehen. --!wie erreich ich diese Ansicht? Woher bekomme ich die Punktzahl der einzelnen Person?
-		\textcolor{blue}
-		{
-		\item{O 2.5} Wenn ein \textit{Quest} aus \textit{Subquests} besteht errechnet sicht die Punktzahl des \textit{Quests} aus der Summe der Punktzahlen der \textit{Subquests}. Das selbe gilt für \textit{Subquests}, welche wiederum aus \textit{Subquests} bestehten. Sind ein Teil der \textit{Subquests} erledigt, wird dynamisch beim \textit{Quest} die noch zu holenden Punkte angezeigt.
-		\item{O 2.6} Die Punktzahl von einem \textit{(Side-) Quest} kann nachträglich vom \textit{Besitzer} geändert werden, sofern es noch keinen \textit{Bearbeiter} gibt.
-		\item{O 2.7} \textit{(Sub-) Quests} in \textit{Gruppen}, welche das \textit{Rangsystem} aktiviert haben können nicht an \textit{Benutzer} außerhalb der Gruppe delegiert werden. 
-		}
-
-
-	\end{itemize}
 
 \subsection{Use-Cases}
 
