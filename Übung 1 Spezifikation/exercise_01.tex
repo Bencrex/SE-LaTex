@@ -376,6 +376,8 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 	\end{itemize}
 	\end{samepage}
 
+\newpage
+
 \begin{samepage}
 	\textbf{Numbers:} SQ-3 \\
 	\textbf{Name:} Gruppe erstellen \\
@@ -408,6 +410,34 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 	\end{itemize}
 	\end{itemize}
 	\end{samepage}
+
+\newpage
+
+	\begin{samepage}
+		\textbf{Numbers:} SQ-4 \\
+		\textbf{Name:} Punktzahl ändern\\
+		\textbf{Actors:} \textit{Benutzer}\\
+		\textbf{Trigger:} \textit{Benutzer} wählt Punktzahl ändern, SQ-2\\ 
+		\textbf{Preconditions:} \textit{Quest} existiert und \textit{Rangsystem ist aktiv}\\ 
+		\textbf{Postconditions / Goal:} Quest besitzt neue Punktzahl\\
+		\textbf{Postconditions Special Cases:} \textit{Subquest} gelöscht, \textit{Quest} Punktzahl angepasst\\
+		\textbf{Steps Default Case:}
+		\begin{itemize}
+			\item[1] Benutzer wählt Quest aus
+			\item[2] Benutzer wählt Punkzahl ändern
+			\item[3] Eingabe der neuen Punktzahl 
+			\item[4] Speichern   
+		\end{itemize}
+		\textbf{Special Cases:}
+		\begin{itemize}
+		\item [2a] Benutzer wählt löschen der Sidequest
+		\begin{itemize}
+			\item [2a1] Ändern der Punktzahl des Quests vom gelöschten Sidequest um dessen Punktebetrag
+		\end{itemize}   
+		\item [5b] 
+		\item [6c] 
+		\end{itemize} 
+		\end{samepage}
 
 \newpage
 \section{Nicht Funktionale Anforderungen}
