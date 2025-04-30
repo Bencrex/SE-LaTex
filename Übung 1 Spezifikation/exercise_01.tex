@@ -14,18 +14,19 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy} 
-\fancyhead[L]{\teamname}  
-\fancyhead[C]{Software Engineering\\Aufgabenblatt \aufgabenblatt}
-\fancyhead[R]{\\\includegraphics[width=0.25\textwidth]{../common/hs\_aalen\_de.png}}
 
-\fancypagestyle{page1}{
-	\fancyhead[L]{\teamname \\Abgabe: \duedate}
-	\fancyhead[C]{Software Engineering\\Aufgabenblatt \aufgabenblatt}
-	\fancyhead[R]{ \\\includegraphics[width=0.25\textwidth]{../common/hs\_aalen\_de.png}}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy} 
+%\fancyhead[L]{\teamname}  
+%\fancyhead[C]{Software Engineering\\Aufgabenblatt \aufgabenblatt}
+%\fancyhead[R]{\\\includegraphics[width=0.25\textwidth]{../common/hs\_aalen\_de.png}}
 
-}
+%\fancypagestyle{page1}{
+%	\fancyhead[L]{\teamname \\Abgabe: \duedate}
+%	\fancyhead[C]{Software Engineering\\Aufgabenblatt \aufgabenblatt}
+%	\fancyhead[R]{ \\\includegraphics[width=0.25\textwidth]{../common/hs\_aalen\_de.png}}
+%
+%}
 \setlength{\parindent}{0mm}
 \setlength{\parskip}{2.5mm}
 
@@ -357,20 +358,20 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 	\end{itemize}
 	\textbf{Steps Default Case:}
 	\begin{itemize}
-		\item[1] \textit{Besitzer} wählt Quest aus
-		\item[2] \textit{Besitzer} wählt Option löschen
-		\item[3] \textit{Quest} wird gelöscht 
+		\item[1] \textit{Besitzer} wählt \textit{Quest} aus.
+		\item[2] \textit{Besitzer} wählt ''Option löschen'' aus.
+		\item[3] \textit{Quest} wird gelöscht.
 	\end{itemize}
 	\textbf{Special Cases:}
 	\begin{itemize}
-	\item [2a] Löschvorgang verweigert
+	\item [2a] Löschvorgang wird verweigert.
 	\begin{itemize}
-		\item [2a1] Fehlermeldung mit Name des Besitzers der Quest wird ausgegeben 
+		\item [2a1] Fehlermeldung mit Name des \textit{Besitzers} der \textit{Quest} wird ausgegeben.
 	\end{itemize} 
-	\item [3a] Aktives Rangsystem / Bearbeiter vorhanden
+	\item [3a] \textit{Bearbeiter} vorhanden.
 	\begin{itemize}
-		\item [3a1] Alle betroffenen Bearbeiter der Quest werden benachrichtigt, dass die Quest gelöscht wird
-		\item [3a2] Im Falle eines aktiven Rangsystems werden Punkte von bereits abgeschlossenen Subquests den Bearbeitern, welche diese abgeschlossen haben, wieder abgezogen
+		\item [3a1] Alle betroffenen \textit{Bearbeiter} der \textit{Quest} werden benachrichtigt, dass die \textit{Quest} gelöscht wird.
+		\item [3a2] Punkte von bereits abgeschlossenen \textit{Subquests} den \textit{Bearbeitern}, welche diese abgeschlossen haben, wieder abgezogen.
 	\end{itemize}
 	\end{itemize}
 	\end{samepage}
