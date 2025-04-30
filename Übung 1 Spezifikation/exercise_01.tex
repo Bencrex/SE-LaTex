@@ -387,18 +387,18 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 	\textbf{Postconditions Special Cases:} Die neue \textit{Gruppe} existiert im System \\
 	\textbf{Steps Default Case:}
 	\begin{itemize}
-		\item[1] \textit{Benutzer} wählt Neuanlage, dann Gruppe statt Quest aus.
-		\item[2] Eine beliebige Anzahl weiterer \textit{Benutzer} können per Benutzername oder E-Mail eingegeben werden.
-		\item[3] Das System überprüft die Benutzerdaten und fügt die \textit{Benutzer} vorerst hinzu.
+		\item[1] \textit{Benutzer} wählt Neuanlage, dann \textit{Gruppe} statt \textit{Quest} aus.
+		\item[2] Eine beliebige Anzahl weiterer \textit{Benutzer} können per Benutzername oder E-Mail angegeben werden.
+		\item[3] Das System überprüft die Benutzerdaten und fügt die \textit{Benutzer} vorerst zur Gruppe hinzu.
   		\item[4] Jedem Gruppenmitglied wird eine Nachricht gesendet, die über das Hinzufügen informiert, aber die Ablehnung neben der Kenntnisnahme anbietet.
-    		\item[5] Der Benutzer bestätigt, das System generiert einen Gruppennamen aus den Namen der Mitglieder und legt die Gruppe.
-      		\item[6] Die anderen Mitglieder lehnen das Hinzufügen nicht ab und sind weiterhin Teil der Gruppe.
+    		\item[5] Der \textit{Benutzer} bestätigt, das System generiert einen Gruppennamen aus den Namen der Mitglieder und legt die \textit{Gruppe} an.
+      		\item[6] Die anderen Mitglieder lehnen das Hinzufügen nicht ab und sind weiterhin Teil der \textit{Gruppe}.
 	\end{itemize}
 	\textbf{Special Cases:}
 	\begin{itemize}
 	\item [3a] Die Überprüfung schlägt fehl, die nicht gefundenen Benutzernamen/E-Mails werden entfernt und ein Fehlerhinweis wird ausgegeben. Weiter mit Schritt 2.
- 	\item [5b] Der Benutzer gibt einen eigenen Gruppennamen ein und bestätigt, in dem Fall bleibt der Name bestehen und das System legt die Gruppe an.
-  	\item [6c] Ein oder mehrere Mitglieder lehnen die Teilnahme ab, sie werden dann aus der Gruppe gelöscht.
+ 	\item [5a] Der Benutzer gibt einen eigenen Gruppennamen ein und bestätigt, in dem Fall bleibt der eingegebene Name bestehen und das System legt die Gruppe direkt an.
+  	\item [6a] Ein oder mehrere Mitglieder lehnen die Teilnahme ab, sie werden dann aus der Gruppe gelöscht.
 	\end{itemize}
 	\end{samepage}
 
@@ -409,29 +409,29 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 		\textbf{Name:} Punktzahl ändern\\
 		\textbf{Actors:} \textit{Benutzer}\\
 		\textbf{Trigger:} \textit{Benutzer} wählt Punktzahl ändern, SQ-2\\ 
-		\textbf{Preconditions:} \textit{Quest} existiert und \textit{Rangsystem ist aktiv}\\ 
-		\textbf{Postconditions / Goal:} Quest besitzt neue Punktzahl\\
-		\textbf{Postconditions Special Cases:} \textit{Subquest} gelöscht, \textit{Quest} Punktzahl angepasst\\
+		\textbf{Preconditions:} \textit{Quest} existiert innerhalb einer Gruppe\\ 
+		\textbf{Postconditions / Goal:} \textit{Quest} besitzt neue Punktzahl\\
+		\textbf{Postconditions Special Cases:} \textit{Subquest} gelöscht, Punktzahl der \textit{Quest} angepasst\\
 		\textbf{Steps Default Case:}
 		\begin{itemize}
-			\item[1] Benutzer wählt Quest aus
-			\item[2] Benutzer wählt Punkzahl ändern
-			\item[3] Eingabe der neuen Punktzahl 
-			\item[4] Speichern   
+			\item[1] \textit{Benutzer} wählt \textit{Quest} aus
+			\item[2] \textit{Benutzer} wählt ''Punkzahl ändern'' aus.
+			\item[3] \textit{Benutzer} gibt neue Punktzahl ein.
+			\item[4] \textit{Benutzer} wählt ''Speichern'' aus. 
 		\end{itemize}
 		\textbf{Special Cases:}
 		\begin{itemize}
-		\item [2a] Benutzer wählt löschen der Sidequest
+		\item [2a] \textit{Benutzer} wählt ''Löschen'' der \textit{Quest} aus.
 		\begin{itemize}
-			\item [2a1] Ändern der Punktzahl des Quests vom gelöschten Sidequest um dessen Punktebetrag
+			\item [2a1] Reduzieren der Punktzahl der \textit{Quest} Q\textsubscript{parent} um den Betrag der gelöschten \textit{Subquest} Q\textsubscript{child}.
 		\end{itemize}   
-		\item [2b] Benutzer schließt Sidequest ab (SQ-1)
+		\item [2b] \textit{Benutzer} schließt \textit{Quest} ab (SQ-1).
 		\begin{itemize}
-			\item [2b1] Ändern der zu holenden Punkte werden beim Quest um den Wert des abgeschlossenen Sidequest angepasst
+			\item [2b1] Änderung der noch erreichbaren Punkte der \textit{Quest} Q\textsubscript{parent} um den Betrag der abgeschlossenen \textit{Subquest} Q\textsubscript{child} angepasst.
 		\end{itemize}
-		\item [3a] Ungültige Punktezahl 
+		\item [3a] \textit{benutzer} gibt Ungültige Punktzahl ein.
 		\begin{itemize}
-			\item [3a1] Ausgabe Fehlermeldung
+			\item [3a1] Eine Fehlermeldung wird ausgegeben.
 		\end{itemize}
 		\end{itemize} 
 		\end{samepage}
@@ -439,28 +439,28 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 \newpage
 \begin{samepage}
 		\textbf{Numbers:} SQ-5 \\
-		\textbf{Name:} Gruppe löschen\\
-		\textbf{Actors:} \textit{Benutzer} in der Rolle eines Gruppenmitglieds\\
-		\textbf{Trigger:} Letztes Gruppenmitglied wählt Gruppe verlassen aus\\ 
-		\textbf{Preconditions:} Die \textit{Gruppe} hat nur noch ein Mitglied\\ 
+		\textbf{Name:} \textit{Gruppe} löschen\\
+		\textbf{Actors:} Letzter \textit{Benutzer} in der Rolle eines Gruppenmitglieds\\
+		\textbf{Trigger:} Letztes Gruppenmitglied wählt \textit{Gruppe} ''verlassen'' aus\\ 
+		\textbf{Preconditions:} Die \textit{Gruppe} enthält nur noch ein Mitglied\\ 
 		\textbf{Postconditions / Goal:} \textit{Gruppe} ist aus dem System entfernt\\
 		\textbf{Postconditions Special Cases:} 
   			\begin{itemize}
-				\item Gruppe bleibt bestehen
-    				\item Gruppe ist weiterhin dem Systembekannt und in Archiven/Historien als gelöscht sichtbar (\textit{weiches löschen})
+				\item[3a] Gruppe bleibt bestehen mit einem einzigen Mitglied.
+                    \item[4a] Gruppe ist aus dem System entfernt. 
      			\end{itemize}
 		\textbf{Steps Default Case:}
 		\begin{itemize}
-			\item[1] Das letzte Mitglied wählt verlassen aus.
-			\item[2] Das Dialogfenster zeigt nun anstatt der regulären Meldung einen Hinweis, dass der \textit{Benutzer} das letzte Mitglied ist und die Gruppe bei Akzeptanz 						gelöscht wird.
-			\item[3] \textit{Benutzer} akzeptiert und die Gruppe wird \textit{weich gelöscht}.
+			\item[1] Das letzte Mitglied wählt ''verlassen'' aus.
+			\item[2] Das Dialogfenster zeigt nun anstatt der regulären Meldung einen Hinweis, dass der \textit{Benutzer} das letzte Mitglied ist und die \textit{Gruppe} bei Akzeptanz gelöscht wird.
+			\item[3] \textit{Benutzer} akzeptiert und die \textit{Gruppe} wird \textit{weich gelöscht}, verbleibt also weiterhin im System und ist in Historien sichtbar.
 			\item[4] Vom System vorgegebene Schwellenzeitspanne wird überschritten.
-   			\item[5] Das System entfernt die Gruppe mit samt ihren Daten unwiderruflich.
+   			\item[5] Das System entfernt die Gruppe samt ihrer Daten unwiderruflich.
 		\end{itemize}
 		\textbf{Special Cases:}
 		\begin{itemize}
-		\item[3a] \textit{Benutzer} lehnt ab und verbleibt als einziges Mitglied in der Gruppe, die weiterhin bestehen bleibt. Ende.
-  		\item[4b] Beliebiges ehemaliges Gruppenmitglied fordert das Entfernen der Gruppe aus dem System in seiner Historie an. Weiter bei 5.
+		\item[3a] \textit{Benutzer} lehnt ab und verbleibt als einziges Mitglied in der \textit{Gruppe}, die weiterhin bestehen bleibt. Ende.
+  		\item[4a] Beliebiges ehemaliges Gruppenmitglied fordert das Entfernen der \textit{Gruppe} aus dem System in seiner Historie an. Weiter bei 5.
 		\end{itemize}
 		\end{samepage}
 \newpage
