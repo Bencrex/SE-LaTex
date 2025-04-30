@@ -437,6 +437,35 @@ Spezifizieren Sie ein optionales Feature. Die Whatsapp  Integration (O1) dient a
 		\end{samepage}
 
 \newpage
+\begin{samepage}
+		\textbf{Numbers:} SQ-5 \\
+		\textbf{Name:} Gruppe löschen\\
+		\textbf{Actors:} \textit{Benutzer} in der Rolle eines Gruppenmitglieds\\
+		\textbf{Trigger:} Letztes Gruppenmitglied wählt Gruppe verlassen aus\\ 
+		\textbf{Preconditions:} Die \textit{Gruppe} hat nur noch ein Mitglied\\ 
+		\textbf{Postconditions / Goal:} \textit{Gruppe} ist aus dem System entfernt\\
+		\textbf{Postconditions Special Cases:} 
+  			\begin{itemize}
+				\item Gruppe bleibt bestehen
+    				\item Gruppe ist weiterhin dem Systembekannt und in Archiven/Historien als gelöscht sichtbar (\textit{weiches löschen})
+     			\end{itemize}
+		\textbf{Steps Default Case:}
+		\begin{itemize}
+			\item[1] Das letzte Mitglied wählt verlassen aus.
+			\item[2] Das Dialogfenster zeigt nun anstatt der regulären Meldung einen Hinweis, dass der \textit{Benutzer} das letzte Mitglied ist und die Gruppe bei Akzeptanz 						gelöscht wird.
+			\item[3] \textit{Benutzer} akzeptiert und die Gruppe wird \textit{weich gelöscht}.
+			\item[4] Vom System vorgegebene Schwellenzeitspanne wird überschritten.
+   			\item[5] Das System entfernt die Gruppe mit samt ihren Daten unwiderruflich.
+		\end{itemize}
+		\textbf{Special Cases:}
+		\begin{itemize}
+		\item[3a] \textit{Benutzer} lehnt ab und verbleibt als einziges Mitglied in der Gruppe, die weiterhin bestehen bleibt. Ende.
+  		\item[4b] Beliebiges ehemaliges Gruppenmitglied fordert das Entfernen der Gruppe aus dem System in seiner Historie an. Weiter bei 5.
+		\end{itemize}
+		\end{samepage}
+\newpage
+
+
 \section{Nicht Funktionale Anforderungen}
 
 \subsubsection{NF1 Systemumgebung}
